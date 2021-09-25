@@ -10,6 +10,10 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
+.card:hover {
+  background: rgba(109, 110, 109, 0.15);
+}
+
 .card-img {
   max-height: 165px;
 }

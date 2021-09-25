@@ -1,9 +1,18 @@
 import React from "react";
 import "./inventoryDisplay.css";
-import "../ImgMediaCard/ImgMediaCard";
+import ImgMediaCard from "../ImgMediaCard/ImgMediaCard";
+
 const InventoryDisplay = () => {
   return (
-    <div classname="inventory-display">
+    <div className="inventory-display">
+      <ImgMediaCard />
+      <ImgMediaCard />
+      <ImgMediaCard />
+      <ImgMediaCard />
+      <ImgMediaCard />
+      <ImgMediaCard />
+      <ImgMediaCard />
+      <ImgMediaCard />
       <ImgMediaCard />
     </div>
   );

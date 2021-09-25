@@ -1,14 +1,15 @@
 import React from "react";
 import "./app.css";
-import Cart from "./Cart/Cart";
-import InventoryDisplay from "./InventoryDisplay/InventoryDisplay";
+import CheckOut from "./Pages/CheckOut/CheckOut";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="app">
-      <InventoryDisplay />
-      <Cart />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" component={CheckOut} />
+      </Switch>
+    </Router>
   );
 };
 

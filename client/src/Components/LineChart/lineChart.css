@@ -1,0 +1,4 @@
+.line-chart {
+  grid-area: lineChart;
+  background: rgba(255, 255, 255, 0.55);
+}

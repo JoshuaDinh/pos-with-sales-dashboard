@@ -1,6 +1,5 @@
 .dashboard {
   display: flex;
-  max-height: 100vh;
   max-width: 100vw;
   background: #8e9eab; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -35,24 +34,27 @@
   flex: 1;
   display: grid;
   padding-right: 20px;
+  margin: 25px 0;
 }
 
-.dashboard-data {
+.dashboard-team-data-container {
   display: flex;
   justify-content: space-between;
   height: 70vh;
+  margin: 25px 0;
 }
 
-.dashboard-chart-container {
+.dashboard-team-chart-container {
   flex: 1;
   display: grid;
   grid-template-areas:
     "doughnutChart horizontalBarChart horizontalBarChart horizontalBarChart "
-    "lineChart lineChart lineChart lineChart "
-    "lineChart lineChart lineChart lineChart "
-    "lineChart lineChart lineChart lineChart "
-    "lineChart lineChart lineChart lineChart "
-    "lineChart lineChart lineChart lineChart ";
+    "stackedBar stackedBar stackedBar stackedBar "
+    "stackedBar stackedBar stackedBar stackedBar "
+    "stackedBar stackedBar stackedBar stackedBar "
+    "stackedBar stackedBar stackedBar stackedBar "
+    "stackedBar stackedBar stackedBar stackedBar ";
 
   grid-gap: 20px;
+  height: 70vh;
 }

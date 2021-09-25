@@ -1,0 +1,7 @@
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 4px solid rgb(245, 245, 245, 0.55);
+}

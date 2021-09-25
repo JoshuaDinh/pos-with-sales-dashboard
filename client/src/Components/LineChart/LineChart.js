@@ -21,8 +21,8 @@ const data = {
       label: "Store Monthly Trend",
       data: [12, 19, 3, 5, 2, 3],
       fill: false,
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgba(255, 99, 132, 0.2)",
+      backgroundColor: "#abbaab",
+      borderColor: "rgba(117, 115, 115)",
     },
   ],
 };

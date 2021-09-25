@@ -6,13 +6,17 @@ import CardMedia from "@mui/material/CardMedia";
 
 const ImgMediaCard = () => {
   return (
-    <Card sx={{ maxWidth: 245 }}>
-      <CardMedia
+    <div className="card" sx={{ maxWidth: 245 }}>
+      <img
+        className="card-img"
+        src="https://content.rolex.com/dam/2021/upright-bba-with-shadow/m124300-0001.png?imwidth=420"
+      />
+      {/* <CardMedia
         component="img"
         alt="green iguana"
         height="170"
         image="https://content.rolex.com/dam/2021/upright-bba-with-shadow/m124300-0001.png?imwidth=420"
-      />
+      /> */}
       <div className="card-content">
         <h3 gutterBottom component="div">
           Oyster Perpetual 41
@@ -25,7 +29,7 @@ const ImgMediaCard = () => {
         <button>Learn More</button>
         <button>Add To Cart</button>
       </div>
-    </Card>
+    </div>
   );
 };
 

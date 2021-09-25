@@ -1,7 +1,24 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(245, 245, 245, 0.55);
+  border-radius: 20px;
+  cursor: pointer;
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.card-img {
+  max-height: 165px;
+}
 .card-actions {
   display: flex;
   justify-content: space-between;
   height: 2.5rem;
+  width: 100%;
+  margin: 3% 0;
 }
 
 .card-content {
@@ -9,7 +26,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 4.3rem;
 }
 
 .card-content > h5 {
@@ -17,8 +33,7 @@
 }
 
 .card-actions > button {
-  height: 100%;
-  flex: 0.45;
+  width: 100%;
   background-color: transparent;
   border: none;
   cursor: pointer;

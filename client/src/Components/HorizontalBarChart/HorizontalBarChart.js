@@ -43,7 +43,7 @@ const options = {
     },
     title: {
       display: true,
-      text: "Today's Sales",
+      text: "Today's Sales Board",
     },
   },
 };

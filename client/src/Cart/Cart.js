@@ -20,6 +20,7 @@ const Cart = () => {
           </select>
         </div>
       </div>
+
       <div className="cart-content">
         <div className="cart-item">
           <div className="cart-item-name">
@@ -31,6 +32,48 @@ const Cart = () => {
             <HighlightOffIcon className="cart-delete-icon" />
           </div>
         </div>
+        {/*  placeholders */}
+        <div className="cart-item">
+          <div className="cart-item-name">
+            <h4>Oyster Perpetual 41</h4>
+            <h5>Oyster, 41 mm Oystersteel</h5>
+          </div>
+          <div className="cart-item-price">
+            <h3>$9,5900</h3>
+            <HighlightOffIcon className="cart-delete-icon" />
+          </div>
+        </div>
+        <div className="cart-item">
+          <div className="cart-item-name">
+            <h4>Oyster Perpetual 41</h4>
+            <h5>Oyster, 41 mm Oystersteel</h5>
+          </div>
+          <div className="cart-item-price">
+            <h3>$9,5900</h3>
+            <HighlightOffIcon className="cart-delete-icon" />
+          </div>
+        </div>{" "}
+        <div className="cart-item">
+          <div className="cart-item-name">
+            <h4>Oyster Perpetual 41</h4>
+            <h5>Oyster, 41 mm Oystersteel</h5>
+          </div>
+          <div className="cart-item-price">
+            <h3>$9,5900</h3>
+            <HighlightOffIcon className="cart-delete-icon" />
+          </div>
+        </div>{" "}
+        <div className="cart-item">
+          <div className="cart-item-name">
+            <h4>Oyster Perpetual 41</h4>
+            <h5>Oyster, 41 mm Oystersteel</h5>
+          </div>
+          <div className="cart-item-price">
+            <h3>$9,5900</h3>
+            <HighlightOffIcon className="cart-delete-icon" />
+          </div>
+        </div>{" "}
+        {/*  */}
       </div>
       <div className="cart-checkout">
         <button>

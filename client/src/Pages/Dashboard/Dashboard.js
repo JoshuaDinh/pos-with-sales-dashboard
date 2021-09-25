@@ -2,9 +2,10 @@ import React from "react";
 import "./dashboard.css";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Table from "../../Components/Table/Table";
-import DataCard from "../../Components/DataCard/DataCard";
 import CardContainer from "../../Components/CardContainer/CardContainer";
 import DoughnutGraph from "../../Components/Doughnut/DoughnutGraph";
+import HorizontalBarChart from "../../Components/HorizontalBarChart/HorizontalBarChart";
+import LineChart from "../../Components/LineChart/LineChart";
 
 const Dashboard = () => {
   return (
@@ -14,7 +15,11 @@ const Dashboard = () => {
         <CardContainer />
         <div className="dashboard-data">
           <Table />
-          <DoughnutGraph />
+          <div className="dashboard-chart-container">
+            <DoughnutGraph />
+            <HorizontalBarChart />
+            <LineChart />
+          </div>
         </div>
       </div>
     </div>

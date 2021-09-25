@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   max-height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   background: #8e9eab; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,
@@ -34,10 +34,20 @@
 .dashboard-content {
   flex: 1;
   display: grid;
+  padding-right: 20px;
 }
 
 .dashboard-data {
   display: flex;
+  justify-content: space-between;
   height: 70vh;
-  border: 1px solid rgb(245, 245, 245, 0.55);
+}
+
+.dashboard-chart-container {
+  flex: 1;
+  display: grid;
+  grid-template-areas:
+    "doughnutChart horizontalBarChart"
+    "lineChart  lineChart";
+  grid-gap: 20px;
 }

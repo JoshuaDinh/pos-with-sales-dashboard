@@ -47,7 +47,12 @@
   flex: 1;
   display: grid;
   grid-template-areas:
-    "doughnutChart horizontalBarChart"
-    "lineChart  lineChart";
+    "doughnutChart horizontalBarChart horizontalBarChart horizontalBarChart "
+    "lineChart lineChart lineChart lineChart "
+    "lineChart lineChart lineChart lineChart "
+    "lineChart lineChart lineChart lineChart "
+    "lineChart lineChart lineChart lineChart "
+    "lineChart lineChart lineChart lineChart ";
+
   grid-gap: 20px;
 }

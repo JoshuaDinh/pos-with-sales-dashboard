@@ -2,9 +2,30 @@
   flex: 1;
   max-height: 100vh;
   overflow-y: scroll;
+}
+
+.inventory-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  margin: 25px 0;
+}
+
+.inventory-search-form > input {
+  width: 55%;
+  height: 70%;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  border: 1px solid grey;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.inventory-item-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 20px;
-  padding: 5%;
+  padding: 0 5%;
 }

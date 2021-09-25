@@ -5,15 +5,20 @@ import ImgMediaCard from "../ImgMediaCard/ImgMediaCard";
 const InventoryDisplay = () => {
   return (
     <div className="inventory-display">
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
-      <ImgMediaCard />
+      <form className="inventory-search-form">
+        <input type="text" placeholder="Search Invetory" />
+      </form>
+      <div className="inventory-item-container">
+        <ImgMediaCard />
+        <ImgMediaCard />
+        <ImgMediaCard />
+        <ImgMediaCard />
+        <ImgMediaCard />
+        <ImgMediaCard />
+        <ImgMediaCard />
+        <ImgMediaCard />
+        <ImgMediaCard />
+      </div>
     </div>
   );
 };

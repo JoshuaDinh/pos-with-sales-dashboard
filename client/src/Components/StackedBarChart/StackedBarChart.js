@@ -51,12 +51,10 @@ const data = (canvas) => {
 
 const options = {
   maintainAspectRatio: false,
-
   responsive: true,
   scales: {
     yAxes: [
       {
-        stacked: true,
         ticks: {
           beginAtZero: true,
         },

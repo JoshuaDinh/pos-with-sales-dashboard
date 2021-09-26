@@ -7,8 +7,13 @@ import InventoryDisplay from "../../Components/InventoryDisplay/InventoryDisplay
 const HomePage = () => {
   const [invoiceDetails, setInvoiceDetails] = useState([]);
 
-  const handleClick = (data) =>
-    setInvoiceDetails((invoiceDetails) => [...invoiceDetails, data]);
+  const handleClick = (data) => {
+    if (invoiceDetails[0].Subscription === data.Subscription) {
+      alert("This Subscription Has Already Been Added");
+    } else {
+      setInvoiceDetails((invoiceDetails) => [...invoiceDetails, data]);
+    }
+  };
 
   console.log(invoiceDetails);
   return (

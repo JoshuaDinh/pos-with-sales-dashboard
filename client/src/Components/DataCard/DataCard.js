@@ -4,8 +4,8 @@ import "./dataCard.css";
 const DataCard = ({ title, amount, percent }) => {
   return (
     <div className="data-card">
-      <h3>{title}</h3>
-      <h2>{amount}</h2>
+      <h4>{title}</h4>
+      <h3>{amount}</h3>
       <span>{percent}</span>
     </div>
   );

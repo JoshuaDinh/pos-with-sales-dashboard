@@ -4,7 +4,8 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-const Cart = () => {
+const Cart = ({ details, handleClick }) => {
+  console.log(details);
   return (
     <div className="cart">
       <div className="cart-top">
@@ -21,64 +22,30 @@ const Cart = () => {
           </select>
         </div>
       </div>
-
       <div className="cart-content">
-        <div className="cart-item">
-          <div className="cart-item-name">
-            <h4>Oyster Perpetual 41</h4>
-            <h5>Oyster, 41 mm Oystersteel</h5>
-          </div>
-          <div className="cart-item-price">
-            <h3>$9,5900</h3>
-            <HighlightOffIcon className="cart-delete-icon" />
-          </div>
-        </div>
-        {/*  placeholders */}
-        {/* <div className="cart-item">
-          <div className="cart-item-name">
-            <h4>Oyster Perpetual 41</h4>
-            <h5>Oyster, 41 mm Oystersteel</h5>
-          </div>
-          <div className="cart-item-price">
-            <h3>$9,5900</h3>
-            <HighlightOffIcon className="cart-delete-icon" />
-          </div>
-        </div>
-        <div className="cart-item">
-          <div className="cart-item-name">
-            <h4>Oyster Perpetual 41</h4>
-            <h5>Oyster, 41 mm Oystersteel</h5>
-          </div>
-          <div className="cart-item-price">
-            <h3>$9,5900</h3>
-            <HighlightOffIcon className="cart-delete-icon" />
-          </div>
-        </div>{" "}
-        <div className="cart-item">
-          <div className="cart-item-name">
-            <h4>Oyster Perpetual 41</h4>
-            <h5>Oyster, 41 mm Oystersteel</h5>
-          </div>
-          <div className="cart-item-price">
-            <h3>$9,5900</h3>
-            <HighlightOffIcon className="cart-delete-icon" />
-          </div>
-        </div>{" "}
-        <div className="cart-item">
-          <div className="cart-item-name">
-            <h4>Oyster Perpetual 41</h4>
-            <h5>Oyster, 41 mm Oystersteel</h5>
-          </div>
-          <div className="cart-item-price">
-            <h3>$9,5900</h3>
-            <HighlightOffIcon className="cart-delete-icon" />
-          </div>
-        </div>{" "} */}
-        {/*  */}
+        {details.map((detail) => {
+          return (
+            <div className="cart-item" key={detail.Subscription}>
+              <div className="cart-item-details">
+                <h3>Subscription: {detail.Subscription}</h3>
+                <h5>
+                  + Revenue: <span className="green">{detail.Revenue}</span>
+                </h5>
+                <h5>
+                  Speed Discount: <span className="red">{detail.Speed}%</span>
+                </h5>
+              </div>
+              <div className="cart-item-price">
+                <h3>${detail.Cost}.00</h3>
+                <HighlightOffIcon className="cart-delete-icon" />
+              </div>
+            </div>
+          );
+        })}
       </div>
       <div className="cart-checkout">
-        <button>
-          Clear Order{" "}
+        <button onClick={handleClick}>
+          Clear Order
           <span>
             <BackspaceIcon className="cart-checkout-icon clart-clear-icon" />
           </span>

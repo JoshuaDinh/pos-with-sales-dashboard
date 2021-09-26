@@ -1,32 +1,20 @@
 import * as React from "react";
 import "./imgMediaCard.css";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 
-const ImgMediaCard = () => {
+const ImgMediaCard = ({ plan, cost, speed, revenue, img }) => {
   return (
-    <div className="card" sx={{ maxWidth: 245 }}>
-      <img
-        className="card-img"
-        src="https://content.rolex.com/dam/2021/upright-bba-with-shadow/m124300-0001.png?imwidth=420"
-      />
-      {/* <CardMedia
-        component="img"
-        alt="green iguana"
-        height="170"
-        image="https://content.rolex.com/dam/2021/upright-bba-with-shadow/m124300-0001.png?imwidth=420"
-      /> */}
+    <div className="card">
+      <img className="card-img" src={img} />
+      <h2>{plan}</h2>
       <div className="card-content">
-        <h3 gutterBottom component="div">
-          Oyster Perpetual 41
-        </h3>
-        <h5 gutterBottom component="div">
-          Oyster, 41 mm Oystersteel
-        </h5>
+        <h4>
+          Revenue increase: <span>{revenue}</span>
+        </h4>
+        <h5>Speed discount: {speed}</h5>
       </div>
       <div className="card-actions">
-        <button>Learn More</button>
+        {/* <button>Learn More</button> */}
+        <h4>Cost: {cost} /Monthly</h4>
         <button>Add To Cart</button>
       </div>
     </div>

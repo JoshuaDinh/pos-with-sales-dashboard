@@ -45,10 +45,6 @@
   color: rgb(95, 95, 95);
 }
 
-.card-content > h4 > span {
-  color: rgb(13, 124, 13);
-}
-
 .card-actions > button {
   flex: 1;
   height: 2rem;

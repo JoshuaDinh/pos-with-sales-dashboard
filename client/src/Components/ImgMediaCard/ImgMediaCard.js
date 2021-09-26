@@ -17,12 +17,14 @@ const ImgMediaCard = ({
       <h2>{Subscription}</h2>
       <div className="card-content">
         <h4>
-          Revenue increase: <span>{Revenue}</span>
+          Revenue increase: <span className="green">{Revenue}</span>
         </h4>
-        <h5>Speed discount: {Speed}</h5>
+        <h5>
+          Speed discount: <span className="red">{Speed}%</span>
+        </h5>
       </div>
       <div className="card-actions">
-        <h4>Cost: {Cost} /Monthly</h4>
+        <h4>Cost: ${Cost} /Monthly</h4>
         <button onClick={() => handleClick(data)}>Add To Cart</button>
       </div>
     </div>

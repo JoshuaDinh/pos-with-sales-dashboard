@@ -6,3 +6,11 @@
 input {
   outline: none;
 }
+
+.red {
+  color: rgb(199, 40, 40);
+}
+
+.green {
+  color: rgb(13, 124, 13);
+}

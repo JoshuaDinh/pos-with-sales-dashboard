@@ -15,7 +15,7 @@ const HomePage = () => {
     <div className="checkOut">
       <Sidebar />
       <InventoryDisplay handleClick={handleClick} />
-      <Cart details={invoiceDetails} />
+      <Cart details={invoiceDetails} handleClick={handleClick} />
     </div>
   );
 };

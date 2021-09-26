@@ -3,6 +3,7 @@ import "./cart.css";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 const Cart = () => {
   return (
     <div className="cart">
@@ -33,7 +34,7 @@ const Cart = () => {
           </div>
         </div>
         {/*  placeholders */}
-        <div className="cart-item">
+        {/* <div className="cart-item">
           <div className="cart-item-name">
             <h4>Oyster Perpetual 41</h4>
             <h5>Oyster, 41 mm Oystersteel</h5>
@@ -72,7 +73,7 @@ const Cart = () => {
             <h3>$9,5900</h3>
             <HighlightOffIcon className="cart-delete-icon" />
           </div>
-        </div>{" "}
+        </div>{" "} */}
         {/*  */}
       </div>
       <div className="cart-checkout">

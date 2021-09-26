@@ -10,29 +10,29 @@ import fourDiamond from "../../imgs/4diamond.png";
 import fiveDiamond from "../../imgs/5diamond.png";
 import sevenDiamond from "../../imgs/7diamond.png";
 
-const InventoryDisplay = () => {
-  const [plans, setPlans] = useState([]);
-
+const InventoryDisplay = ({ handleClick }) => {
+  const [subscriptions, setSubscriptions] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("/api/plans");
-      setPlans(response.data);
+      const response = await axios.get("/api/subscriptions");
+      setSubscriptions(response.data);
     };
     fetchData();
-  });
+  }, []);
   return (
     <div className="inventory-display">
       <form className="inventory-search-form">
         <input type="text" placeholder="Search Invetory" />
       </form>
       <div className="inventory-item-container">
-        {plans.map((plan) => {
+        {subscriptions.map((subscription) => {
           return (
             <ImgMediaCard
-              plan={plan.name}
-              cost={plan.cost}
-              speed={plan.speed}
-              revenue={plan.revenue}
+              handleClick={handleClick}
+              Subscription={subscription.Name}
+              Cost={subscription.Cost}
+              Speed={subscription.Speed}
+              Revenue={subscription.Revenue}
               img="https://cdn1.iconfinder.com/data/icons/youtuber/256/thumbs-up-like-gesture-512.png"
             />
           );

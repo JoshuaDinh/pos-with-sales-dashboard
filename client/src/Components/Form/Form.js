@@ -38,7 +38,7 @@ const Form = ({ updateFormData, formData }) => {
           />
           <input
             className="form-input"
-            type="text"
+            type="phone"
             placeholder="Phone Number"
             name="phone_number"
             value={formData?.phone_number}
@@ -46,7 +46,7 @@ const Form = ({ updateFormData, formData }) => {
           />
           <input
             className="form-input"
-            type="text"
+            type="email"
             placeholder="Email"
             name="email"
             value={formData?.email}

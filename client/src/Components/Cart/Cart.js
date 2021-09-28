@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "./cart.css";
-import ImgMediaCard from "../ImgMediaCard/ImgMediaCard";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import axios from "axios";
 import Form from "../Form/Form";
-import img from "../../imgs/1.png";
+// import img from "../../imgs/1.png";
+import CartContent from "../CartContent/CartContent";
 
 const Cart = ({ data, clearInvoiceDetails }) => {
   const [formData, setFormData] = useState({
@@ -23,6 +22,8 @@ const Cart = ({ data, clearInvoiceDetails }) => {
   const updateFormData = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  console.log(formData);
 
   const config = {
     headers: {
@@ -54,27 +55,10 @@ const Cart = ({ data, clearInvoiceDetails }) => {
       <div className="cart-top">
         <h2>Cart Items</h2>
       </div>{" "}
-      <Form />
+      <Form updateFormData={updateFormData} formData={formData} />
       <div className="cart-content">
         {data.subscription_name && (
-          <div className="cart-item">
-            <div className="cart-item-details">
-              <h3>Subscription: {data?.subscription_name}</h3>
-              <h5>
-                + Revenue: <span className="green">{data?.revenue}</span>
-              </h5>
-              <h5>
-                Speed Discount: <span className="red">{data?.speed}%</span>
-              </h5>
-            </div>
-            <div className="cart-item-price">
-              <h3>${data?.cost}.00</h3>
-              <HighlightOffIcon
-                className="cart-delete-icon"
-                onClick={() => clearInvoiceDetails()}
-              />
-            </div>
-          </div>
+          <CartContent clearInvoiceDetails={clearInvoiceDetails} data={data} />
         )}
       </div>
       <form

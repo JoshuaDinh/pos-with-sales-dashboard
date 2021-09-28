@@ -100,10 +100,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
           </div>
         )}
       </div>
-      <form
-        className="cart-checkout"
-        onSubmit={(event) => submitInvoice(event)}
-      >
+      <form className="cart-checkout">
         <button onClick={() => clearInvoiceDetails()}>
           <h4> Clear Order</h4>
           <span>

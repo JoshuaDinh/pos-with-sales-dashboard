@@ -20,12 +20,12 @@ const ImgMediaCard = ({
           Revenue increase: <span className="green">{revenue}</span>
         </h4>
         <h5>
-          Speed discount: <span className="red">{speed}%</span>
+          Speed discount: <span className="red">{speed}</span>
         </h5>
       </div>
       <div className="card-actions">
         <h4>Cost: ${cost} /Monthly</h4>
-        <button onClick={() => handleClick(data)}>
+        <button className=" card-btn" onClick={() => handleClick(data)}>
           <h4>Add To Cart</h4>
         </button>
       </div>

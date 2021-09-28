@@ -7,11 +7,21 @@ const Table = () => {
       <table className="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Daily Sales</th>
-            <th>Monthly Sales</th>
-            <th>Monthly Goal</th>
-            <th>% Goal</th>
+            <th>
+              <span>Name</span>
+            </th>
+            <th>
+              <span>Daily Sales</span>
+            </th>
+            <th>
+              <span>Monthly Sales</span>
+            </th>
+            <th>
+              <span>Monthly Sales</span>
+            </th>
+            <th>
+              <span>% Goal</span>
+            </th>
           </tr>
         </thead>
         {/*  */}

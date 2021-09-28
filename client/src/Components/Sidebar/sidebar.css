@@ -5,9 +5,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: whitesmoke;
+  background: rgb(245, 245, 245, 0.9);
   width: 5vw;
   height: 100vh;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .nav-container {
@@ -20,7 +22,7 @@
 .navLink-icon {
   font-size: 2rem !important;
   color: rgba(95, 167, 37, 0.85);
-  margin: 0 15px;
+  margin: 0 10px;
   z-index: 100;
 }
 
@@ -39,5 +41,23 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .sidebar-link:hover .navLink-icon {
-  color: white;
+  color: whitesmoke;
+}
+
+.sidebar-active {
+  border-radius: 5px;
+  background: #ff8008; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc837,
+    #ff8008
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc837,
+    #ff8008
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.sidebar-active .navLink-icon {
+  color: whitesmoke !important;
 }

@@ -1,8 +1,8 @@
 .table-container {
   display: flex;
-  /* max-height: 50vh; */
-  /* max-width: 50vw; */
-  padding-right: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-right: 20px;
 }
 .table {
   justify-content: center;
@@ -13,7 +13,7 @@ td {
   min-width: 5vw;
   font-size: 0.9rem;
   padding: 15px;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgb(245, 245, 245, 0.9);
   border: 1px solid rgb(245, 245, 245, 0.55);
 }
 

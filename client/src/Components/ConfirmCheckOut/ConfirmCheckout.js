@@ -9,6 +9,7 @@ const ConfirmCheckout = ({
   setConfirmCheckOut,
   formData,
   clearInvoiceDetails,
+  resetFormData,
 }) => {
   const config = {
     headers: {
@@ -17,12 +18,25 @@ const ConfirmCheckout = ({
   };
 
   const body = JSON.stringify(formData);
+
   const submitInvoice = async (e) => {
     e.preventDefault();
     try {
       await axios.post("/api/invoices", body, config);
       alert("invoice submited");
       clearInvoiceDetails(e);
+      resetFormData({
+        first_name: "",
+        last_name: "",
+        phone_number: "",
+        email: "",
+        address: "",
+        subscription_name: "",
+        subscription_id: "",
+        subscription_price: "",
+        employee_id: "",
+      });
+      setConfirmCheckOut(false);
     } catch (err) {
       console.log(err);
       alert(err);

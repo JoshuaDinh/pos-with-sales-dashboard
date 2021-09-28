@@ -1,2 +1,3 @@
 export const TOTAL_MONTHLY = "TOTAL_MONTHLY";
 export const TOTAL_DAILY = "TOTAL_DAILY";
+export const SUBMIT_INVOICE = "SUBMIT_INVOICE";

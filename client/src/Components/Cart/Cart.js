@@ -24,9 +24,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log(data);
-
-  const checkOut = (e, data) => {
+  const additionalDetails = (e, data) => {
     e.preventDefault();
     setFormData({
       ...formData,
@@ -64,7 +62,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
           </span>
         </button>
         <button
-          onClick={(e) => checkOut(e, data)}
+          onClick={(e) => additionalDetails(e, data)}
           className="cart-checkout-btn"
         >
           <h4> CheckOut</h4>
@@ -75,6 +73,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
         <ConfirmCheckout
           setConfirmCheckOut={setConfirmCheckOut}
           clearInvoiceDetails={clearInvoiceDetails}
+          resetFormData={setFormData}
           formData={formData}
         />
       )}

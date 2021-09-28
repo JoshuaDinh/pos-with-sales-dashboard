@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./app.css";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import Dashboard from "./Pages/Dashboard/Dashboard";

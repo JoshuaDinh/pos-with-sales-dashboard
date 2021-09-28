@@ -48,9 +48,7 @@ const Dashboard = ({ fetchDailyData, fetchMonthlyData }) => {
 };
 
 const mapStateToProps = (state) => {
-  return {
-    monthlyData: state.totalData.monthlyData,
-  };
+  return {};
 };
 export default connect(mapStateToProps, { fetchDailyData, fetchMonthlyData })(
   Dashboard

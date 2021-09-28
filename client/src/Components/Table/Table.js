@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./table.css";
+import axios from "axios";
 
 const Table = () => {
+  const [table, setTable] = useState([]);
+  const [employeeData, setEmployeeData] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("/api/sales");
+      setTable(response.data);
+    };
+    fetchData();
+  }, []);
+
+  table.map((t) => {
+    console.log(t);
+  });
   return (
     <div className="table-container">
       <table className="table">

@@ -27,17 +27,15 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex: 0.15;
+  flex: 0.25;
 }
 
 .cart-checkout > button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 70%;
+  height: 50%;
   min-width: 40%;
-  padding: 15px;
-
   background: white;
   border-radius: 5px;
   border: none;

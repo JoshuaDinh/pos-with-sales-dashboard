@@ -13,6 +13,7 @@ const Form = ({ updateFormData, formData, employees }) => {
             onChange={updateFormData}
             value={formData.employee_name}
           >
+            <option>Select Employee</option>
             {employees[0]?.map((e, idx) => {
               return (
                 <option key={idx} value={e.employee_id}>

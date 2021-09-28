@@ -6,12 +6,11 @@ const connection = require("../../db/dbConfig");
 // Retrieves all employees & there respective sales
 router.get("/", (req, res) => {
   const sql =
-    "SELECT employee_name, subscription_price, invoice_id FROM employees JOIN Invoices ON employees.employee_id = invoices.employee_id";
+    "SELECT invoices.employee_id, employees.employee_id, employee_name, SUM(subscription_price) FROM Invoices JOIN employees ON invoices.employee_id = employees.employee_id GROUP BY employee_name";
   connection.query(sql, (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json(err);
-      x;
     }
     res.status(200).json(result);
   });

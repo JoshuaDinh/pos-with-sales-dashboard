@@ -18,41 +18,6 @@
 .cart-top > h2 {
   font-size: 1.35rem;
   margin: 5px 0;
-  /* background: -webkit-linear-gradient(#ffc837, #ff8008);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-}
-
-.cart-reciept-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.cart-reciept-customer {
-  flex: 0.95;
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-input {
-  height: 3vh;
-  border: none;
-  border-top: 1px solid grey;
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
-}
-
-.cart-input:nth-child(2) {
-  border-bottom: 1px solid grey;
-}
-
-.cart-reciept-info > select {
-  height: 4vh;
-  margin-right: 10px;
-  cursor: pointer;
-  outline: none;
 }
 
 /* -------------------------- */

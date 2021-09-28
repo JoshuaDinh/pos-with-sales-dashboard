@@ -1,24 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import "./form.css";
+import { connect } from "react-redux";
 
-const Form = ({ updateFormData, formData }) => {
+const Form = ({ updateFormData, formData, employees }) => {
   return (
     <form className="form">
       <div className="form-info">
         <div className="form-header">
           <h4>Customer Information:</h4>
-          <select>
-            <option name="employee_id" value={"1"}>
-              Employee
-            </option>
-            <option name="employee_id" value={"2"}>
-              yui
-            </option>
-            <option name="employee_id" value={"3"}>
-              joshua
-            </option>
+          <select
+            name="employee_id"
+            onChange={updateFormData}
+            value={formData.employee_name}
+          >
+            {employees[0]?.map((e, idx) => {
+              return (
+                <option key={idx} value={e.employee_id}>
+                  {e.employee_name}
+                </option>
+              );
+            })}
           </select>
         </div>
+        {employees[0]?.map((e) => {})}
         <div className="form-customer">
           <input
             className="form-input"
@@ -66,4 +70,9 @@ const Form = ({ updateFormData, formData }) => {
   );
 };
 
-export default Form;
+const mapStateToProps = (state) => {
+  return {
+    employees: state.employees,
+  };
+};
+export default connect(mapStateToProps)(Form);

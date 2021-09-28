@@ -4,7 +4,6 @@ import BackspaceIcon from "@mui/icons-material/Backspace";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import axios from "axios";
 import Form from "../Form/Form";
-// import img from "../../imgs/1.png";
 import CartContent from "../CartContent/CartContent";
 
 const Cart = ({ data, clearInvoiceDetails }) => {
@@ -16,7 +15,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
     address: "",
     subscription_name: "",
     subscription_id: "",
-    employee_id: "5",
+    employee_id: "",
   });
 
   const updateFormData = (e) => {

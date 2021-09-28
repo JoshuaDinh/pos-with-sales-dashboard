@@ -30,14 +30,14 @@
   flex: 0.15;
 }
 
-.cart-checkout > button {
+.cart-checkout-btn,
+.cart-cancel-btn {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   height: 40%;
   min-width: 40%;
   padding: 20px;
-
   background: white;
   border-radius: 5px;
   border: none;
@@ -46,7 +46,7 @@
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.cart-checkout > button:last-child {
+.cart-checkout-btn {
   background: #ff8008; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -59,7 +59,8 @@
     #ff8008
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.cart-checkout > button:hover {
+.cart-checkout-btn:hover,
+.cart-cancel-btn:hover {
   transform: scale(1.07);
 }
 
@@ -70,9 +71,9 @@
 .cart-checkout-icon:first-child {
   color: rgb(180, 180, 180);
 }
-.cart-checkout > button:first-child:hover .cart-checkout-icon:first-child {
+.cart-cancel-btn:hover .cart-checkout-icon:first-child {
   color: #ff8008;
 }
-.cart-checkout > button:last-child:hover .cart-checkout-icon:last-child {
+.cart-checkoutbtn:hover .cart-checkout-icon:last-child {
   color: whitesmoke;
 }

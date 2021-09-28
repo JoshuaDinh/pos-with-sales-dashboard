@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./cartContent.css";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import img from "../../imgs/1.png";

@@ -3,13 +3,8 @@ import "./app.css";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { fetchEmployees } from "./Actions/employees";
-import { connect } from "react-redux";
 
-const App = ({ fetchEmployees }) => {
-  useEffect(() => {
-    fetchEmployees();
-  }, []);
+const App = () => {
   return (
     <Router>
       <Switch>
@@ -20,8 +15,4 @@ const App = ({ fetchEmployees }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {};
-};
-
-export default connect(mapStateToProps, { fetchEmployees })(App);
+export default App;

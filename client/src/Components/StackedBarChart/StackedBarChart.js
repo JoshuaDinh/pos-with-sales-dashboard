@@ -12,39 +12,39 @@ const data = (canvas) => {
   gradient.addColorStop(1, "rgb(255, 128, 8)");
 
   return {
-    labels: ["1", "2", "3", "4", "5", "6", "7"],
-    datasets: [
-      {
-        label: "Joshua Dinh",
-        data: [12, 19, 3, 5, 2, 3, 8],
-        backgroundColor: gradient,
-      },
-      {
-        label: "zung",
-        data: [2, 3, 20, 5, 1, 4, 40],
-        backgroundColor: gradient,
-      },
-      {
-        label: "yuui",
-        data: [3, 10, 13, 15, 22, 30, 25],
-        backgroundColor: gradient,
-      },
-      {
-        label: "dominic",
-        data: [3, 10, 13, 15, 22, 30, 10],
-        backgroundColor: gradient,
-      },
-      {
-        label: "tien",
-        data: [3, 10, 13, 15, 22, 30, 8],
-        backgroundColor: gradient,
-      },
-      {
-        label: "zung",
-        data: [2, 3, 20, 5, 1, 4, 6],
-        backgroundColor: gradient,
-      },
-    ],
+    labels: ["1", "2", "3", "4", "5", "6"],
+    datasets: [],
+    //   {
+    //     label: "Joshua Dinh",
+    //     data: [12, 19, 3, 5, 2, 3, 8],
+    //     backgroundColor: gradient,
+    //   },
+    //   {
+    //     label: "zung",
+    //     data: [2, 3, 20, 5, 1, 4, 40],
+    //     backgroundColor: gradient,
+    //   },
+    //   {
+    //     label: "yuui",
+    //     data: [3, 10, 13, 15, 22, 30, 25],
+    //     backgroundColor: gradient,
+    //   },
+    //   {
+    //     label: "dominic",
+    //     data: [3, 10, 13, 15, 22, 30, 10],
+    //     backgroundColor: gradient,
+    //   },
+    //   {
+    //     label: "tien",
+    //     data: [3, 10, 13, 15, 22, 30, 8],
+    //     backgroundColor: gradient,
+    //   },
+    //   {
+    //     label: "zung",
+    //     data: [2, 3, 20, 5, 1, 4, 6],
+    //     backgroundColor: gradient,
+    //   },
+    // ],
   };
 };
 

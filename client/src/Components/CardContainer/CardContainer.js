@@ -1,14 +1,16 @@
 import React from "react";
 import "./cardContainer.css";
 import DataCard from "../DataCard/DataCard";
+import { connect } from "react-redux";
 
-const CardContainer = () => {
+const CardContainer = ({ dailyData, monthlyData }) => {
+  console.log(monthlyData);
   return (
     <div className="card-container">
-      <DataCard title="Todays Sales" amount="$10,000" percent="%90" />
+      <DataCard title="Todays Sales" amount={dailyData} percent="%90" />
       <DataCard
         title="Monthly Sales Total"
-        amount="$10,000,000"
+        amount={monthlyData}
         percent="%90"
       />
       <DataCard title="Goal:" amount="$10,000" percent="%90" />
@@ -18,4 +20,10 @@ const CardContainer = () => {
   );
 };
 
-export default CardContainer;
+const mapStateToProps = (state) => {
+  return {
+    monthlyData: state.totalData.monthlyData,
+    dailyData: state.totalData.dailyData,
+  };
+};
+export default connect(mapStateToProps)(CardContainer);

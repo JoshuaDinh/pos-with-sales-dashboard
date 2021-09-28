@@ -28,5 +28,24 @@
     #abbaab
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /* Ezoic coloring */
+  background: #5fa725;
+
+  background: linear-gradient(
+    315deg,
+    hsla(93, 64%, 40%, 1) 0%,
+    hsla(0, 0%, 100%, 0.8) 92%
+  );
+
+  background: -moz-linear-gradient(
+    315deg,
+    hsla(93, 64%, 40%, 1) 0%,
+    hsla(0, 0%, 100%, 0.8) 92%
+  );
+
+  background: -webkit-linear-gradient(
+    315deg,
+    hsla(93, 64%, 40%, 1) 0%,
+    hsla(0, 0%, 100%, 0.8) 92%
+  );
 }

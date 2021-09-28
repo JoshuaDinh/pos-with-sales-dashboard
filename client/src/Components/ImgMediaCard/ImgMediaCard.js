@@ -3,29 +3,31 @@ import "./imgMediaCard.css";
 
 const ImgMediaCard = ({
   handleClick,
-  Subscription,
-  Cost,
-  Speed,
-  Revenue,
+  subscription_id,
+  subscription_name,
+  cost,
+  speed,
+  revenue,
   img,
 }) => {
-  const data = { Subscription, Cost, Speed, Revenue };
-
+  const data = { subscription_name, cost, speed, revenue, subscription_id };
   return (
     <div className="card">
       <img className="card-img" src={img} />
-      <h2>{Subscription}</h2>
+      <h2>{subscription_name}</h2>
       <div className="card-content">
         <h4>
-          Revenue increase: <span className="green">{Revenue}</span>
+          Revenue increase: <span className="green">{revenue}</span>
         </h4>
         <h5>
-          Speed discount: <span className="red">{Speed}%</span>
+          Speed discount: <span className="red">{speed}%</span>
         </h5>
       </div>
       <div className="card-actions">
-        <h4>Cost: ${Cost} /Monthly</h4>
-        <button onClick={() => handleClick(data)}>Add To Cart</button>
+        <h4>Cost: ${cost} /Monthly</h4>
+        <button onClick={() => handleClick(data)}>
+          <h4>Add To Cart</h4>
+        </button>
       </div>
     </div>
   );

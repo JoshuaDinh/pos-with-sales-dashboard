@@ -3,22 +3,28 @@ import "./inventoryDisplay.css";
 import axios from "axios";
 
 import ImgMediaCard from "../ImgMediaCard/ImgMediaCard";
-import fiveStar from "../../imgs/5star.png";
-import twoDiamond from "../../imgs/2diamond.png";
-import threeDiamond from "../../imgs/3diamond.png";
-import fourDiamond from "../../imgs/4diamond.png";
-import fiveDiamond from "../../imgs/5diamond.png";
-import sevenDiamond from "../../imgs/7diamond.png";
+import firstImage from "../../imgs/1.png";
+import secondImage from "../../imgs/2.png";
+import thirdImage from "../../imgs/3.png";
+import fourthImage from "../../imgs/4.jpeg";
+import fifthImage from "../../imgs/5.png";
+import sixthImage from "../../imgs/6.png";
 
 const InventoryDisplay = ({ handleClick }) => {
   const [subscriptions, setSubscriptions] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("/api/subscriptions");
-      setSubscriptions(response.data);
+      try {
+        const response = await axios.get("/api/subscriptions");
+        setSubscriptions(response.data);
+      } catch (err) {
+        console.error(err);
+      }
     };
     fetchData();
   }, []);
+
   return (
     <div className="inventory-display">
       <form className="inventory-search-form">
@@ -29,11 +35,12 @@ const InventoryDisplay = ({ handleClick }) => {
           return (
             <ImgMediaCard
               handleClick={handleClick}
-              Subscription={subscription.Name}
-              Cost={subscription.Cost}
-              Speed={subscription.Speed}
-              Revenue={subscription.Revenue}
-              img="https://cdn1.iconfinder.com/data/icons/youtuber/256/thumbs-up-like-gesture-512.png"
+              subscription_id={subscription.subscription_id}
+              subscription_name={subscription.subscription_name}
+              cost={subscription.cost}
+              speed={subscription.speed_discount}
+              revenue={subscription.revenue}
+              img={firstImage}
             />
           );
         })}

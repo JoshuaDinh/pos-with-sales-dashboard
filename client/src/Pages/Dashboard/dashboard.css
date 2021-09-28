@@ -1,17 +1,6 @@
 .dashboard {
   display: flex;
   max-width: 100vw;
-  background: #8e9eab; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #c2c9cf,
-    #8e9eab
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #c2c9cf,
-    #8e9eab
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   /*  new gradient*/
 
@@ -27,7 +16,26 @@
     #abbaab
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /* Ezoic  */
+  background: hsla(93, 64%, 40%, 1);
+
+  background: linear-gradient(
+    315deg,
+    hsla(93, 64%, 40%, 1) 0%,
+    hsla(0, 0%, 100%, 0.8) 92%
+  );
+
+  background: -moz-linear-gradient(
+    315deg,
+    hsla(93, 64%, 40%, 1) 0%,
+    hsla(0, 0%, 100%, 0.8) 92%
+  );
+
+  background: -webkit-linear-gradient(
+    315deg,
+    hsla(93, 64%, 40%, 1) 0%,
+    hsla(0, 0%, 100%, 0.8) 92%
+  );
 }
 
 .dashboard-content {

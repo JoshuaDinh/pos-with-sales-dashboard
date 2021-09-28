@@ -18,13 +18,26 @@ router.get("/", (req, res) => {
 // Post Request /api/invoices
 // Adds Invoice to records
 router.post("/", (req, res) => {
-  const { CustomerName, Phone, PlanId, EmployeeId } = req.body;
+  const {
+    customer_name,
+    phone_number,
+    subscription_id,
+    subscription_name,
+    employee_id,
+  } = req.body;
 
   const new_Date = new Date();
 
   const sql =
-    "INSERT INTO Invoices (CustomerName, Phone, PlanId, EmployeeId, new_Date ) VALUES (?, ?, ?, ?, ?)";
-  const data = [CustomerName, Phone, PlanId, EmployeeId, new_Date];
+    "INSERT INTO Invoices (customer_name, phone_number, subscription_id, subscription_name, employee_id, new_date ) VALUES (?, ?, ?, ?, ?, ?)";
+  const data = [
+    customer_name,
+    phone_number,
+    subscription_id,
+    subscription_name,
+    employee_id,
+    new_Date,
+  ];
 
   connection.query(sql, data, (err, result) => {
     if (err) {

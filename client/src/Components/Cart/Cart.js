@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import "./cart.css";
+import ImgMediaCard from "../ImgMediaCard/ImgMediaCard";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import axios from "axios";
+import Form from "../Form/Form";
+import img from "../../imgs/1.png";
 
 const Cart = ({ data, clearInvoiceDetails }) => {
   const [formData, setFormData] = useState({
-    customer_name: "",
+    first_name: "",
+    last_name: "",
     phone_number: "",
+    email: "",
+    address: "",
     subscription_name: "",
     subscription_id: "",
     employee_id: "5",
@@ -42,42 +48,13 @@ const Cart = ({ data, clearInvoiceDetails }) => {
     }
   };
 
+  const today = new Date();
   return (
     <div className="cart">
       <div className="cart-top">
         <h2>Cart Items</h2>
-        <div className="cart-reciept-info">
-          <div className="cart-reciept-customer">
-            <input
-              className="cart-input"
-              type="text"
-              placeholder="Full Name"
-              name="customer_name"
-              value={formData.customer_name}
-              onChange={updateFormData}
-            />
-            <input
-              className="cart-input"
-              type="text"
-              placeholder="Contact"
-              name="phone_number"
-              value={formData.phone_number}
-              onChange={updateFormData}
-            />
-          </div>
-          <select>
-            <option name="employee_id" value={"1"}>
-              Employee
-            </option>
-            <option name="employee_id" value={"2"}>
-              yui
-            </option>
-            <option name="employee_id" value={"3"}>
-              joshua
-            </option>
-          </select>
-        </div>
-      </div>
+      </div>{" "}
+      <Form />
       <div className="cart-content">
         {data.subscription_name && (
           <div className="cart-item">
@@ -100,7 +77,10 @@ const Cart = ({ data, clearInvoiceDetails }) => {
           </div>
         )}
       </div>
-      <form className="cart-checkout">
+      <form
+        className="cart-checkout"
+        onSubmit={(event) => submitInvoice(event)}
+      >
         <button onClick={() => clearInvoiceDetails()}>
           <h4> Clear Order</h4>
           <span>

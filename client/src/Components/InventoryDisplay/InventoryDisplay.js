@@ -31,9 +31,10 @@ const InventoryDisplay = ({ handleClick }) => {
         <input type="text" placeholder="Search Invetory" />
       </form>
       <div className="inventory-item-container">
-        {subscriptions.map((subscription) => {
+        {subscriptions.map((subscription, index) => {
           return (
             <ImgMediaCard
+              key={index}
               handleClick={handleClick}
               subscription_id={subscription.subscription_id}
               subscription_name={subscription.subscription_name}

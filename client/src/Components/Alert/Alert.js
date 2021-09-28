@@ -1,8 +1,8 @@
 import React from "react";
 import "./alert.css";
 
-const Alert = () => {
-  return <div className="alert">alert</div>;
+const Alert = (title) => {
+  return <div className="alert">{title}</div>;
 };
 
 export default Alert;

@@ -19,8 +19,11 @@ router.get("/", (req, res) => {
 // Adds Invoice to records
 router.post("/", (req, res) => {
   const {
-    customer_name,
+    first_name,
+    last_name,
     phone_number,
+    email,
+    address,
     subscription_id,
     subscription_name,
     employee_id,
@@ -29,10 +32,13 @@ router.post("/", (req, res) => {
   const new_Date = new Date();
 
   const sql =
-    "INSERT INTO Invoices (customer_name, phone_number, subscription_id, subscription_name, employee_id, new_date ) VALUES (?, ?, ?, ?, ?, ?)";
+    "INSERT INTO Invoices (first_name, last_name, phone_number, email, address, subscription_id, subscription_name, employee_id, new_date ) VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)";
   const data = [
-    customer_name,
+    first_name,
+    last_name,
     phone_number,
+    email,
+    address,
     subscription_id,
     subscription_name,
     employee_id,

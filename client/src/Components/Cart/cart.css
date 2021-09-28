@@ -131,8 +131,14 @@
 
 .cart-checkout-icon {
   font-size: 1.2rem !important;
-  color: whitesmoke;
+  color: rgb(180, 180, 180);
 }
 .cart-checkout-icon:first-child {
-  color: grey;
+  color: rgb(180, 180, 180);
+}
+.cart-checkout > button:first-child:hover .cart-checkout-icon:first-child {
+  color: #ff8008;
+}
+.cart-checkout > button:last-child:hover .cart-checkout-icon:last-child {
+  color: whitesmoke;
 }

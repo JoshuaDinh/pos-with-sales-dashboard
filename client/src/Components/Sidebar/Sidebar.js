@@ -10,13 +10,13 @@ const Sidebar = () => {
     <div className="sidebar">
       <nav className="nav-container">
         <NavLink to="/home" className="sidebar-link">
-          <HomeIcon className="navLink-icon" /> <h4>Home</h4>
+          <HomeIcon className="navLink-icon" />
         </NavLink>
         <NavLink to="/CheckOut" className="sidebar-link">
-          <PointOfSaleIcon className="navLink-icon" /> <h4>CheckOut</h4>
+          <PointOfSaleIcon className="navLink-icon" />
         </NavLink>
         <NavLink to="/Dashboard" className="sidebar-link">
-          <AssessmentIcon className="navLink-icon" /> <h4>Dashboard</h4>
+          <AssessmentIcon className="navLink-icon" />
         </NavLink>
       </nav>
     </div>

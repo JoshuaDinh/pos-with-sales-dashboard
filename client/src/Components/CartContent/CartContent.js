@@ -9,7 +9,7 @@ export const CartContent = ({ data, clearInvoiceDetails }) => {
       <img src={img} className="cart-img" />
       <div className="cart-item-content">
         <div className="cart-item-details">
-          <h2>Subscription: {data?.subscription_name}</h2>
+          <h3>Subscription: {data?.subscription_name}</h3>
           <h5>
             + Revenue: <span className="green">{data?.revenue}</span>
           </h5>

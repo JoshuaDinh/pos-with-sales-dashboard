@@ -27,15 +27,17 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex: 0.25;
+  flex: 0.15;
 }
 
 .cart-checkout > button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 50%;
+  height: 40%;
   min-width: 40%;
+  padding: 20px;
+
   background: white;
   border-radius: 5px;
   border: none;
@@ -49,7 +51,7 @@
   background: -webkit-linear-gradient(
     to right,
     #ffc837,
-    #ff8008
+    rgb(255, 128, 8)
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,

@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./form.css";
-import { connect } from "react-redux";
+import axios from "axios";
 
-const Form = ({ updateFormData, formData, employees }) => {
+const Form = ({ updateFormData, formData }) => {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/employees");
+        setEmployees(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(employees);
   return (
     <form className="form">
       <div className="form-info">
@@ -14,16 +29,16 @@ const Form = ({ updateFormData, formData, employees }) => {
             value={formData.employee_name}
           >
             <option>Select Employee</option>
-            {employees[0]?.map((e, idx) => {
-              return (
-                <option key={idx} value={e.employee_id}>
-                  {e.employee_name}
-                </option>
-              );
-            })}
+            {employees &&
+              employees?.map((e, idx) => {
+                return (
+                  <option key={idx} value={e.employee_id}>
+                    {e.employee_name}
+                  </option>
+                );
+              })}
           </select>
         </div>
-        {employees[0]?.map((e) => {})}
         <div className="form-customer">
           <input
             className="form-input"
@@ -71,9 +86,4 @@ const Form = ({ updateFormData, formData, employees }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    employees: state.employees,
-  };
-};
-export default connect(mapStateToProps)(Form);
+export default Form;

@@ -26,13 +26,14 @@ router.post("/", (req, res) => {
     address,
     subscription_id,
     subscription_name,
+    subscription_price,
     employee_id,
   } = req.body;
 
   const new_Date = new Date();
 
   const sql =
-    "INSERT INTO Invoices (first_name, last_name, phone_number, email, address, subscription_id, subscription_name, employee_id, new_date ) VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)";
+    "INSERT INTO Invoices (first_name, last_name, phone_number, email, address, subscription_id, subscription_name, subscription_price, employee_id, new_date ) VALUES (?, ?, ?, ?, ?, ?, ?, ? ,? ,?)";
   const data = [
     first_name,
     last_name,
@@ -41,6 +42,7 @@ router.post("/", (req, res) => {
     address,
     subscription_id,
     subscription_name,
+    subscription_price,
     employee_id,
     new_Date,
   ];

@@ -16,6 +16,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
     address: "",
     subscription_name: "",
     subscription_id: "",
+    subscription_price: "",
     employee_id: "",
   });
 
@@ -23,7 +24,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log(formData);
+  console.log(data);
 
   const checkOut = (e, data) => {
     e.preventDefault();
@@ -31,6 +32,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
       ...formData,
       subscription_name: data.subscription_name,
       subscription_id: data.subscription_id,
+      subscription_price: data.cost,
     });
     setConfirmCheckOut(!confirmCheckOut);
   };
@@ -40,7 +42,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
     <div className="cart">
       <div className="cart-top">
         <h2>Cart Items</h2>
-      </div>{" "}
+      </div>
       <Form updateFormData={updateFormData} formData={formData} />
       <div className="cart-content">
         {data.subscription_name && (

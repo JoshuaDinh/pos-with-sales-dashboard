@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import "./horizontalBarChart.css";
+import { fetchDailyData } from "../../Actions/dailyData";
+import { connect } from "react-redux";
 
 const options = {
   indexAxis: "y",
@@ -26,9 +28,7 @@ const options = {
   },
 };
 
-const HorizontalBarChart = () => {
-  const [barData, setBarData] = useState([]);
-
+const HorizontalBarChart = ({ fetchDailyData, employeeData }) => {
   const data = (canvas) => {
     const ctx = canvas.getContext("2d");
 
@@ -38,6 +38,17 @@ const HorizontalBarChart = () => {
     gradient.addColorStop(0.8, "rgb(255, 200, 55,0.6)");
     gradient.addColorStop(1, "rgb(255, 128, 8)");
 
+    const label_names = [];
+    const chart_data = [];
+    const get_label_names = employeeData.map((data) => {
+      label_names.push(data.employee_name);
+    });
+
+    const get_chart_data = employeeData.map((data) => {
+      chart_data.push(data["SUM(subscription_price)"]);
+    });
+
+    console.log(label_names);
     return {
       labels: label_names,
       datasets: [
@@ -52,25 +63,11 @@ const HorizontalBarChart = () => {
     };
   };
 
-  const label_names = [];
-  const chart_data = [];
-
-  const get_label_names = barData.map((data) => {
-    label_names.push(data.employee_name);
-  });
-
-  const get_chart_data = barData.map((data) => {
-    chart_data.push(data["SUM(subscription_price)"]);
-  });
-
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get("/api/sales/Employee-Totals/Today");
-      setBarData(response.data);
-    };
-    fetchData();
+    {
+      fetchDailyData();
+    }
   }, []);
-  console.log(barData);
   return (
     <div className="horizontal-bar-chart">
       <Bar data={data} options={options} />
@@ -78,4 +75,9 @@ const HorizontalBarChart = () => {
   );
 };
 
-export default HorizontalBarChart;
+const mapStateToProps = (state) => {
+  return {
+    employeeData: state.dailyEmployeeData.data,
+  };
+};
+export default connect(mapStateToProps, { fetchDailyData })(HorizontalBarChart);

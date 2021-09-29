@@ -17,7 +17,7 @@ const Sidebar = () => {
           <HomeIcon className="navLink-icon" />
         </NavLink> */}
         <NavLink
-          to="/CheckOut"
+          to="/"
           className="sidebar-link"
           activeClassName="sidebar-active"
         >

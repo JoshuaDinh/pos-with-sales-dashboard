@@ -29,6 +29,7 @@
     "expess": "0.0.1-security",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
     "numeral": "^2.0.6",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",

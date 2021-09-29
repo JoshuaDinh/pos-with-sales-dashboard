@@ -6,7 +6,7 @@ const connection = require("../../db/dbConfig");
 // Retrieves total sum of all sales per employee daily
 router.get("/employee/daily-totals", (req, res) => {
   const sql =
-    "SELECT invoices.employee_id, employees.employee_id, employee_name, SUM(subscription_price) FROM Invoices JOIN employees ON invoices.employee_id = employees.employee_id WHERE date(new_date) = current_date GROUP BY employee_name";
+    "SELECT Invoices.employee_id, employees.employee_id, employee_name, SUM(subscription_price) FROM Invoices JOIN employees ON Invoices.employee_id = employees.employee_id WHERE date(new_date) = current_date GROUP BY employee_name";
   connection.query(sql, (err, result) => {
     if (err) {
       console.log(err);
@@ -48,13 +48,12 @@ router.get("/monthly-total", (req, res) => {
 // Retrieves total sum of all sales monthly
 router.get("/employee/monthly-total", (req, res) => {
   const sql =
-    "SELECT invoices.employee_id, employees.employee_id, employee_name, employee_title, SUM(subscription_price) FROM Invoices JOIN employees ON invoices.employee_id = employees.employee_id WHERE month(CURRENT_DATE())AND year(new_date) = year(CURRENT_DATE())GROUP BY employee_name";
+    "SELECT Invoices.employee_id, employees.employee_id, employee_name, employee_title, SUM(subscription_price) FROM Invoices JOIN employees ON Invoices.employee_id = employees.employee_id WHERE month(CURRENT_DATE())AND year(new_date) = year(CURRENT_DATE())GROUP BY employee_name";
 
   connection.query(sql, (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json(err);
-      x;
     }
     res.status(200).json(result);
   });
@@ -96,7 +95,7 @@ router.get("/yearly-total/by-month", (req, res) => {
 // Retrieves total sum of all employees & there sales
 router.get("/employee/all-time-totals", (req, res) => {
   const sql =
-    "SELECT invoices.employee_id, employees.employee_id, employee_name, SUM(subscription_price) FROM Invoices JOIN employees ON invoices.employee_id = employees.employee_id GROUP BY employee_name";
+    "SELECT Invoices.employee_id, employees.employee_id, employee_name, SUM(subscription_price) FROM Invoices JOIN employees ON Invoices.employee_id = employees.employee_id GROUP BY employee_name";
   connection.query(sql, (err, result) => {
     if (err) {
       console.log(err);

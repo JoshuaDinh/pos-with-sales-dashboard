@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  const sql = "SELECT * FROM PLANS";
+  const sql = "SELECT * FROM plans";
   connection.query(sql, (err, result) => {
     if (err) {
       res.status(500).json({ error: err });

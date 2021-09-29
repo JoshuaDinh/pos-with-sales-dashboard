@@ -22,7 +22,11 @@ const ConfirmCheckout = ({
   const submitInvoice = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/invoices", body, config);
+      await axios.post(
+        "https://pos-sales-dashboard.herokuapp.com/api/invoices",
+        body,
+        config
+      );
       alert("invoice submited");
       clearInvoiceDetails(e);
       resetFormData({

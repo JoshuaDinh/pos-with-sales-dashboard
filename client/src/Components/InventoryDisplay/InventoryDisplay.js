@@ -20,7 +20,9 @@ const InventoryDisplay = ({ handleInvoiceDetails }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/subscriptions");
+        const response = await axios.get(
+          "https://pos-sales-dashboard.herokuapp.com/api/subscriptions"
+        );
         setSubscriptions(response.data);
       } catch (err) {
         console.error(err);

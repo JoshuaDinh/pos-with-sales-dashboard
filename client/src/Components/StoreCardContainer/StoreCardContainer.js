@@ -11,11 +11,13 @@ const StoreCardContainer = ({ dailyData, monthlyData, yearlyData }) => {
     <div className="storeCardContainer">
       <DataCard
         title="Todays Sales"
-        amount={numeral(dailyData).format("($0,0)")}
+        amount={numeral(dailyData["SUM(subscription_price)"]).format("($0,0)")}
       />
       <DataCard
         title="Monthly Sales Total"
-        amount={numeral(monthlyData).format("($0,0)")}
+        amount={numeral(monthlyData["SUM(subscription_price)"]).format(
+          "($0,0)"
+        )}
       />
       <DataCard
         title="Yearly Sales Total"
@@ -26,9 +28,9 @@ const StoreCardContainer = ({ dailyData, monthlyData, yearlyData }) => {
 };
 const mapStateToProps = (state) => {
   return {
-    monthlyData: state.totalData.monthlyData,
-    dailyData: state.totalData.dailyData,
-    yearlyData: state.totalData.yearlyData,
+    monthlyData: state.totalSalesData.monthlyData,
+    dailyData: state.totalSalesData.dailyData,
+    yearlyData: state.totalSalesData.yearlyData,
   };
 };
 

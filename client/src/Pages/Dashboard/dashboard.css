@@ -2,20 +2,6 @@
   display: flex;
   max-width: 100vw;
 
-  /*  new gradient*/
-
-  background: rgb(216, 216, 216);
-  /* background: -webkit-linear-gradient(
-    to left,
-    #ebeaea,
-    #abbaab
-  ); 
-  background: linear-gradient(
-    to left,
-    #ebeaea,
-    #abbaab
-  );  */
-
   /* Ezoic  */
   background: rgb(95, 167, 37);
 
@@ -56,12 +42,10 @@
   flex: 1;
   display: grid;
   grid-template-areas:
-    "doughnutChart horizontalBarChart horizontalBarChart horizontalBarChart "
-    "stackedBar stackedBar stackedBar stackedBar "
-    "stackedBar stackedBar stackedBar stackedBar "
-    "stackedBar stackedBar stackedBar stackedBar "
-    "stackedBar stackedBar stackedBar stackedBar "
-    "stackedBar stackedBar stackedBar stackedBar ";
+    "doughnutChart doughnutChart  pieChart pieChart "
+    "horizontalBarChart horizontalBarChart  horizontalBarChart horizontalBarChart "
+    "horizontalBarChart horizontalBarChart horizontalBarChart horizontalBarChart "
+    "horizontalBarChart horizontalBarChart horizontalBarChart horizontalBarChart ";
   grid-gap: 20px;
   height: 70vh;
 }
@@ -73,7 +57,7 @@
 }
 
 .dashboard-left-chart-container {
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

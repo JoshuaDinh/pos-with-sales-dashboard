@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchMonthlyData = () => async (dispatch) => {
   try {
-    const response = await axios.get("/api/sales/Month");
+    const response = await axios.get("/api/sales/Total/Month");
     dispatch({ type: TOTAL_MONTHLY, payload: response.data });
   } catch (err) {
     console.error(err);
@@ -12,7 +12,7 @@ export const fetchMonthlyData = () => async (dispatch) => {
 
 export const fetchDailyData = () => async (dispatch) => {
   try {
-    const response = await axios.get("/api/sales/Today");
+    const response = await axios.get("/api/sales/Total/Today");
     dispatch({ type: TOTAL_DAILY, payload: response.data });
   } catch (err) {
     console.error(err);

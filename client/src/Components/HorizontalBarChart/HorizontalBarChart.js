@@ -43,7 +43,7 @@ const HorizontalBarChart = () => {
       datasets: [
         {
           label: "Sales",
-          data: [12, 19, 3, 5, 2, 3],
+          data: chart_data,
           backgroundColor: gradient,
           borderColor: "000000",
           borderWidth: 1,
@@ -53,9 +53,14 @@ const HorizontalBarChart = () => {
   };
 
   const label_names = [];
+  const chart_data = [];
 
   const get_label_names = barData.map((data) => {
     label_names.push(data.employee_name);
+  });
+
+  const get_chart_data = barData.map((data) => {
+    chart_data.push(data["SUM(subscription_price)"]);
   });
 
   useEffect(() => {

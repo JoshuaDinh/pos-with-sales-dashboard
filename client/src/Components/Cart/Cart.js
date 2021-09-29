@@ -35,7 +35,8 @@ const Cart = ({ data, clearInvoiceDetails, mobileCart }) => {
     setConfirmCheckOut(!confirmCheckOut);
   };
 
-  const today = new Date();
+  console.log(formData);
+  console.log(data);
   return (
     <div className={`cart ${mobileCart && "mobile-cart-active"}`}>
       <div className="cart-top">

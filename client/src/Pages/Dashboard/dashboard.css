@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   max-width: 100vw;
-  min-width: 100vw;
+  box-sizing: border-box;
   /* Ezoic  */
   background: rgb(95, 167, 37);
 

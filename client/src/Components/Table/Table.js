@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./table.css";
 import numeral from "numeral";
 const Table = ({ dataSet }) => {

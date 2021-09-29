@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import { Bar } from "react-chartjs-2";
 import "./horizontalBarChart.css";
 
@@ -37,12 +36,12 @@ const HorizontalBarChart = ({ dataSet }) => {
 
     const label_names = [];
     const chart_data = [];
-    const get_label_names = dataSet.map((data) => {
-      label_names.push(data.employee_name);
+    dataSet.map((data) => {
+      return label_names.push(data.employee_name);
     });
 
-    const get_chart_data = dataSet.map((data) => {
-      chart_data.push(data["SUM(subscription_price)"]);
+    dataSet.map((data) => {
+      return chart_data.push(data["SUM(subscription_price)"]);
     });
 
     return {

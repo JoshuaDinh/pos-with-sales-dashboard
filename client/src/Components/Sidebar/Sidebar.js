@@ -1,6 +1,6 @@
 import React from "react";
 import "./sidebar.css";
-import HomeIcon from "@mui/icons-material/Home";
+// import HomeIcon from "@mui/icons-material/Home";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import { NavLink } from "react-router-dom";

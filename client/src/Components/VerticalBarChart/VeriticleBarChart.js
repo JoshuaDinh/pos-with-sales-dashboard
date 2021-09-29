@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./verticalBar.css";
 import { Bar } from "react-chartjs-2";
-import { fetchTotalYearlyDataByMonth } from "../../Actions/totalSalesData";
-import { connect } from "react-redux";
 import moment from "moment";
 
 const options = {
@@ -30,12 +28,12 @@ const VerticalBar = ({ dataSet }) => {
 
     const label_names = [];
     const chart_data = [];
-    const get_label_names = dataSet.map((data) => {
-      label_names.push(moment(data.new_date).format("MMM yy "));
+    dataSet.map((data) => {
+      return label_names.push(moment(data.new_date).format("MMM yy "));
     });
 
-    const get_chart_data = dataSet.map((data) => {
-      chart_data.push(data["SUM(subscription_price)"]);
+    dataSet.map((data) => {
+      return chart_data.push(data["SUM(subscription_price)"]);
     });
 
     return {

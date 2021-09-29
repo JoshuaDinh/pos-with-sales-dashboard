@@ -29,13 +29,15 @@ const LineChart = ({ dataSet }) => {
 
     const label_names = [];
     const chart_data = [];
-    const get_label_names = dataSet.map((data) => {
-      label_names.push(moment(data.new_date).format("MMM yy "));
+
+    dataSet.map((data) => {
+      return label_names.push(moment(data.new_date).format("MMM yy "));
     });
 
-    const get_chart_data = dataSet.map((data) => {
-      chart_data.push(data["SUM(subscription_price)"]);
+    dataSet.map((data) => {
+      return chart_data.push(data["SUM(subscription_price)"]);
     });
+
     return {
       labels: label_names,
       datasets: [

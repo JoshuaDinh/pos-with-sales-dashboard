@@ -1,11 +1,10 @@
 import React from "react";
 import "./cartContent.css";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const CartContent = ({ data, clearInvoiceDetails, img }) => {
   return (
     <div className="cart-item">
-      <img src={data?.img} className="cart-img" />
+      <img src={data?.img} className="cart-img" alt="#" />
       <div className="cart-item-content">
         <div className="cart-item-details">
           <h3>Subscription: {data?.subscription_name}</h3>

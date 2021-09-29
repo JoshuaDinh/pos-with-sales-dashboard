@@ -17,12 +17,12 @@ const PieChart = ({ dataSet }) => {
 
     const label_names = [];
     const chart_data = [];
-    const get_label_names = dataSet.map((data) => {
-      label_names.push(data.subscription_name);
+    dataSet.map((data) => {
+      return label_names.push(data.subscription_name);
     });
 
-    const get_chart_data = dataSet.map((data) => {
-      chart_data.push(data["COUNT(*)"]);
+    dataSet.map((data) => {
+      return chart_data.push(data["COUNT(*)"]);
     });
 
     return {

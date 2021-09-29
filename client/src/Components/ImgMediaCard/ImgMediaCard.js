@@ -20,7 +20,7 @@ const ImgMediaCard = ({
   };
   return (
     <div className="card">
-      <img className="card-img" src={img} />
+      <img className="card-img" src={img} alt="#" />
       <h2>{subscription_name}</h2>
       <div className="card-content">
         <h4>

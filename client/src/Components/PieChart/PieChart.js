@@ -17,11 +17,11 @@ const PieChart = ({ dataSet }) => {
 
     const label_names = [];
     const chart_data = [];
-    const get_label_names = dataSet.daily.map((data) => {
+    const get_label_names = dataSet.map((data) => {
       label_names.push(data.subscription_name);
     });
 
-    const get_chart_data = dataSet.daily.map((data) => {
+    const get_chart_data = dataSet.map((data) => {
       chart_data.push(data["COUNT(*)"]);
     });
 
@@ -40,7 +40,7 @@ const PieChart = ({ dataSet }) => {
   };
   return (
     <div className="pie-chart-container">
-      <h3>Todays Subscriptions Sales</h3>
+      <h3>Todays Subscriptions Sold</h3>
       <div className="pie-chart">
         <Pie data={data} options={options} />
       </div>

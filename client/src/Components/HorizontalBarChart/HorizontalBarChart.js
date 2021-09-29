@@ -1,30 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import "./horizontalBarChart.css";
-
-const data = (canvas) => {
-  const ctx = canvas.getContext("2d");
-
-  let gradient = ctx.createLinearGradient(0, 0, 240, 240);
-  gradient.addColorStop(0.1, "rgb(255, 200, 55,0.6)");
-  gradient.addColorStop(0.5, "rgb(255, 128, 8)");
-  gradient.addColorStop(0.8, "rgb(255, 200, 55,0.6)");
-  gradient.addColorStop(1, "rgb(255, 128, 8)");
-
-  return {
-    labels: ["Joshua Dinh", "Zung", "Yui", "Dominic", "Tien"],
-    datasets: [
-      {
-        label: "Sales",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: gradient,
-
-        borderColor: "000000",
-        borderWidth: 1,
-      },
-    ],
-  };
-};
 
 const options = {
   indexAxis: "y",
@@ -49,10 +26,51 @@ const options = {
   },
 };
 
-const HorizontalBarChart = () => (
-  <div className="horizontal-bar-chart">
-    <Bar data={data} options={options} />
-  </div>
-);
+const HorizontalBarChart = () => {
+  const [barData, setBarData] = useState([]);
+
+  const data = (canvas) => {
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(0, 0, 240, 240);
+    gradient.addColorStop(0.1, "rgb(255, 200, 55,0.6)");
+    gradient.addColorStop(0.5, "rgb(255, 128, 8)");
+    gradient.addColorStop(0.8, "rgb(255, 200, 55,0.6)");
+    gradient.addColorStop(1, "rgb(255, 128, 8)");
+
+    return {
+      labels: label_names,
+      datasets: [
+        {
+          label: "Sales",
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: gradient,
+          borderColor: "000000",
+          borderWidth: 1,
+        },
+      ],
+    };
+  };
+
+  const label_names = [];
+
+  const get_label_names = barData.map((data) => {
+    label_names.push(data.employee_name);
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("/api/sales/Employee-Totals/Today");
+      setBarData(response.data);
+    };
+    fetchData();
+  }, []);
+  console.log(barData);
+  return (
+    <div className="horizontal-bar-chart">
+      <Bar data={data} options={options} />
+    </div>
+  );
+};
 
 export default HorizontalBarChart;

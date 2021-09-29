@@ -24,7 +24,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const additionalDetails = (e, data) => {
+  const addDetails = (e, data) => {
     e.preventDefault();
     setFormData({
       ...formData,
@@ -62,7 +62,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
           </span>
         </button>
         <button
-          onClick={(e) => additionalDetails(e, data)}
+          onClick={(e) => addDetails(e, data)}
           className="cart-checkout-btn"
         >
           <h4> CheckOut</h4>

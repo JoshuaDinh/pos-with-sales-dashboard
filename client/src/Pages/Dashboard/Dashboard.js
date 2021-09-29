@@ -55,7 +55,7 @@ const Dashboard = ({
     <div className="dashboard">
       <Sidebar />
       <div className="dashboard-content">
-        <CardContainer dataSet={dailySubscriptionsData} />
+        <CardContainer dataSet={monthlySubscriptionsData} />
         <div className="dashboard-team-data-container">
           <Table dataSet={monthlyData} />
           <div className="dashboard-team-chart-container">

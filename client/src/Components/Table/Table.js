@@ -16,15 +16,8 @@ const Table = ({ dataSet }) => {
             <th>
               <span>Monthly Sales</span>
             </th>
-            <th>
-              <span>Goals</span>
-            </th>
-            {/* <th>
-              <span>% Goal</span>
-            </th> */}
           </tr>
         </thead>
-        {/*  */}
         <tbody>
           {dataSet.map((data) => {
             return (
@@ -34,7 +27,6 @@ const Table = ({ dataSet }) => {
                 <td>
                   {numeral(data["SUM(subscription_price)"]).format("$0,0")}
                 </td>
-                <td>40%</td>
               </tr>
             );
           })}

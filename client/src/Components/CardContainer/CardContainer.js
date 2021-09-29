@@ -1,8 +1,6 @@
 import React from "react";
 import "./cardContainer.css";
 import DataCard from "../DataCard/DataCard";
-import numeral from "numeral";
-import { connect } from "react-redux";
 
 const CardContainer = ({ dataSet }) => {
   return (
@@ -21,10 +19,4 @@ const CardContainer = ({ dataSet }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    monthlyData: state.totalSalesData.monthlyData,
-    dailyData: state.totalSalesData.dailyData,
-  };
-};
-export default connect(mapStateToProps)(CardContainer);
+export default CardContainer;

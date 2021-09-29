@@ -74,6 +74,6 @@
 .cart-cancel-btn:hover .cart-checkout-icon:first-child {
   color: #ff8008;
 }
-.cart-checkoutbtn:hover .cart-checkout-icon:last-child {
+.cart-checkout-btn:hover .cart-checkout-icon:last-child {
   color: whitesmoke;
 }

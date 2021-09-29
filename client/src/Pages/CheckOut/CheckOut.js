@@ -7,7 +7,7 @@ import InventoryDisplay from "../../Components/InventoryDisplay/InventoryDisplay
 const CheckOut = () => {
   const [invoiceDetails, setInvoiceDetails] = useState({});
 
-  const handleClick = (data) => {
+  const handleInvoiceDetails = (data) => {
     setInvoiceDetails(data);
   };
   const clearInvoiceDetails = () => {
@@ -23,7 +23,7 @@ const CheckOut = () => {
   return (
     <div className="checkOut">
       <Sidebar />
-      <InventoryDisplay handleClick={handleClick} />
+      <InventoryDisplay handleInvoiceDetails={handleInvoiceDetails} />
       <Cart data={invoiceDetails} clearInvoiceDetails={clearInvoiceDetails} />
     </div>
   );

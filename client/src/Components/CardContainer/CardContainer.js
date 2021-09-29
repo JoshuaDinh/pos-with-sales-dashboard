@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 const CardContainer = ({ dataSet }) => {
   return (
     <div className="card-container">
-      {dataSet.monthly.map((data) => {
+      {dataSet.map((data) => {
         console.log(data);
         return (
           <DataCard

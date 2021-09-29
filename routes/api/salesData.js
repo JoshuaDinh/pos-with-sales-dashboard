@@ -137,7 +137,7 @@ router.get("/subscription-counts/monthly", (req, res) => {
 // Retrieves total quantity * name of subscriptions sold by entire team for the day
 router.get("/subscription-counts/daily", (req, res) => {
   const sql =
-    "SELECT subscription_name, COUNT(*) FROM Invoices WHERE date(new_date) = current_date GROUP BY subscription_name";
+    "SELECT subscription_name, COUNT(*) FROM Invoices WHERE date(new_date) = current_date GROUP BY subscription_name ORDER BY subscription_price ASC ";
   connection.query(sql, (err, result) => {
     if (err) {
       console.log(err);

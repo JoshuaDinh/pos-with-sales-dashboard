@@ -28,11 +28,11 @@ const DoughnutGraph = ({ dataSet }) => {
     const label_names = [];
     const chart_data = [];
     const get_label_names = dataSet.map((data) => {
-      label_names.push(data.employee_name);
+      label_names.push(data.subscription_name);
     });
 
     const get_chart_data = dataSet.map((data) => {
-      chart_data.push(data["SUM(subscription_price)"]);
+      chart_data.push(data["COUNT(*)"]);
     });
 
     return {
@@ -49,8 +49,11 @@ const DoughnutGraph = ({ dataSet }) => {
     };
   };
   return (
-    <div className="doughnut">
-      <Doughnut data={data} options={options} />
+    <div className="doughnut-container">
+      <h3>Monthly Subscriptions Sold</h3>
+      <div className="doughnut">
+        <Doughnut data={data} options={options} />
+      </div>
     </div>
   );
 };

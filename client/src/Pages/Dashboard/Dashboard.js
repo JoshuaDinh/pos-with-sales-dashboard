@@ -37,7 +37,8 @@ const Dashboard = ({
   dailyData,
   monthlyData,
   yearlyDataByMonth,
-  subscriptionsData,
+  dailySubscriptionsData,
+  monthlySubscriptionsData,
 }) => {
   useEffect(() => {
     fetchTotalDailyData();
@@ -54,13 +55,13 @@ const Dashboard = ({
     <div className="dashboard">
       <Sidebar />
       <div className="dashboard-content">
-        <CardContainer dataSet={subscriptionsData} />
+        <CardContainer dataSet={dailySubscriptionsData} />
         <div className="dashboard-team-data-container">
           <Table dataSet={monthlyData} />
           <div className="dashboard-team-chart-container">
-            <DoughnutGraph dataSet={dailyData} />
+            <DoughnutGraph dataSet={monthlySubscriptionsData} />
             <HorizontalBarChart dataSet={dailyData} />
-            <PieChart dataSet={subscriptionsData} />
+            <PieChart dataSet={dailySubscriptionsData} />
           </div>
         </div>
         <div className="dashboard-store-chart-container">
@@ -82,7 +83,8 @@ const mapStateToProps = (state) => {
     dailyData: state.employeeSalesData.daily,
     monthlyData: state.employeeSalesData.monthly,
     yearlyDataByMonth: state.totalSalesData.yearlyDataByMonth,
-    subscriptionsData: state.subscriptionsData,
+    dailySubscriptionsData: state.subscriptionsData.daily,
+    monthlySubscriptionsData: state.subscriptionsData.monthly,
   };
 };
 export default connect(mapStateToProps, {

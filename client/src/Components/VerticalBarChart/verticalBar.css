@@ -5,3 +5,9 @@
     rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
+
+@media (max-width: 900px) {
+  .vertical-bar {
+    min-height: 50vh;
+  }
+}

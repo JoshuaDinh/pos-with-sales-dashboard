@@ -6,7 +6,7 @@ import Form from "../Form/Form";
 import CartContent from "../CartContent/CartContent";
 import ConfirmCheckout from "../ConfirmCheckOut/ConfirmCheckout";
 
-const Cart = ({ data, clearInvoiceDetails }) => {
+const Cart = ({ data, clearInvoiceDetails, mobileCart }) => {
   const [confirmCheckOut, setConfirmCheckOut] = useState(false);
   const [formData, setFormData] = useState({
     first_name: "",
@@ -37,7 +37,7 @@ const Cart = ({ data, clearInvoiceDetails }) => {
 
   const today = new Date();
   return (
-    <div className="cart">
+    <div className={`cart ${mobileCart && "mobile-cart-active"}`}>
       <div className="cart-top">
         <h2>Cart Items</h2>
       </div>

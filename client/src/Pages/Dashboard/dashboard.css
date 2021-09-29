@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   max-width: 100vw;
-
+  min-width: 100vw;
   /* Ezoic  */
   background: rgb(95, 167, 37);
 
@@ -28,46 +28,64 @@
   flex: 1;
   display: grid;
   margin: 25px 0;
-  padding: 20px;
+  padding: 2%;
 }
 
-.dashboard-team-data-container {
+.dashboard-top-container {
   display: flex;
   justify-content: space-between;
-  height: 70vh;
+  min-height: 70vh;
   margin: 25px 0;
 }
 
-.dashboard-team-chart-container {
+.dashboard-top-chart-container {
   flex: 1;
-  display: grid;
-  grid-template-areas:
-    "doughnutChart doughnutChart  pieChart pieChart "
-    "horizontalBarChart horizontalBarChart  horizontalBarChart horizontalBarChart "
-    "horizontalBarChart horizontalBarChart horizontalBarChart horizontalBarChart "
-    "horizontalBarChart horizontalBarChart horizontalBarChart horizontalBarChart ";
-  grid-gap: 20px;
-  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.dashboard-store-chart-container {
-  height: 70vh;
+.dashboard-circle-charts {
   display: flex;
-  padding: 15px;
+  min-height: 50%;
+  margin-bottom: 20px;
+}
+
+.dashboard-total-chart-container {
+  min-height: 70vh;
+  display: flex;
 }
 
 .dashboard-left-chart-container {
-  flex: 2;
+  flex: 1.75;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
 }
 
 .dashboard-right-chart-container {
-  flex: 1;
+  flex: 0.95;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
+  margin-left: 20px;
+}
+
+@media (max-width: 1250px) {
+  .dashboard-top-container {
+    flex-direction: column;
+  }
+  .dashboard-circle-charts {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-total-chart-container {
+    flex-direction: column;
+  }
+  .dashboard-right-chart-container {
+    margin: 0;
+  }
 }

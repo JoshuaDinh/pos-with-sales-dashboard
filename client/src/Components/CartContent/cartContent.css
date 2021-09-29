@@ -6,7 +6,7 @@
 
 .cart-img {
   height: 180px;
-  object-fit: contain;
+  object-fit: cover;
 }
 .cart-item {
   display: flex;
@@ -40,4 +40,13 @@
 .cart-delete-icon {
   cursor: pointer;
   color: rgb(199, 40, 40);
+}
+
+@media (max-width: 1200px) {
+  .cart-item {
+    width: 50%;
+  }
+  .cart-content {
+    margin: 3%;
+  }
 }

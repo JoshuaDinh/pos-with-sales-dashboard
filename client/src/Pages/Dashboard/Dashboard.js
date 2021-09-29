@@ -10,6 +10,7 @@ import HorizontalBarChart from "../../Components/HorizontalBarChart/HorizontalBa
 import LineChart from "../../Components/LineChart/LineChart";
 import VerticalBar from "../../Components/VerticalBarChart/VeriticleBarChart";
 import PieChart from "../../Components/PieChart/PieChart";
+import MobileNav from "../../Components/MobileNav/MobileNav";
 import {
   fetchTotalDailyData,
   fetchTotalMonthlyData,
@@ -54,17 +55,20 @@ const Dashboard = ({
   return (
     <div className="dashboard">
       <Sidebar />
+      <MobileNav />
       <div className="dashboard-content">
         <CardContainer dataSet={monthlySubscriptionsData} />
-        <div className="dashboard-team-data-container">
+        <div className="dashboard-top-container">
           <Table dataSet={monthlyData} />
-          <div className="dashboard-team-chart-container">
-            <DoughnutGraph dataSet={monthlySubscriptionsData} />
+          <div className="dashboard-top-chart-container">
+            <div className="dashboard-circle-charts">
+              <DoughnutGraph dataSet={monthlySubscriptionsData} />{" "}
+              <PieChart dataSet={dailySubscriptionsData} />
+            </div>
             <HorizontalBarChart dataSet={dailyData} />
-            <PieChart dataSet={dailySubscriptionsData} />
           </div>
         </div>
-        <div className="dashboard-store-chart-container">
+        <div className="dashboard-total-chart-container">
           <div className="dashboard-left-chart-container">
             <StoreCardContainer />
             <LineChart dataSet={yearlyDataByMonth} />

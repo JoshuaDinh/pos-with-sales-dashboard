@@ -1,0 +1,107 @@
+/* Mobile Navigation */
+
+.mobile-navigation {
+  position: fixed;
+  top: 2%;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mobile-navigation-toggle {
+  background: #020403;
+}
+
+.mobile-navigation-menu {
+  position: relative;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgb(245, 245, 245, 0.65);
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mobile-navigation-menu-toggle {
+  justify-content: center;
+}
+
+.menu-line {
+  height: 2px;
+  width: 70%;
+  background: #ff8008; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc837,
+    #ff8008
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc837,
+    #ff8008
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 5px;
+  transition: 0.5s ease-out;
+}
+
+.menu-line-toggle:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+}
+.menu-line-toggle:nth-child(2) {
+  transform: translatex(-50px);
+  background: transparent;
+}
+.menu-line-toggle:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+}
+
+.mobile-navigation-dropdown {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+  background: whitesmoke;
+  z-index: 1000;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25vh;
+  width: 100vw;
+  align-items: center;
+  text-decoration: none;
+  background: -webkit-linear-gradient(#ffc837, #ff8008);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+}
+
+@media (max-width: 1220px) {
+  .navigation {
+    display: none;
+  }
+  .mobile-navigation {
+    display: flex;
+  }
+}

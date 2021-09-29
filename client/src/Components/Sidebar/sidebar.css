@@ -62,3 +62,9 @@
 .sidebar-active .navLink-icon {
   color: whitesmoke !important;
 }
+
+@media (max-width: 1200px) {
+  .sidebar {
+    display: none;
+  }
+}

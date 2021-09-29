@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background: rgba(234, 236, 238, 0.85); */
   background: rgb(245, 245, 245, 0.9);
   width: 25%;
   border-left: 1px solid rgb(95, 95, 95);
@@ -76,4 +75,22 @@
 }
 .cart-checkout-btn:hover .cart-checkout-icon:last-child {
   color: whitesmoke;
+}
+
+@media (max-width: 1200px) {
+  .cart {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    padding: 5%;
+    background: whitesmoke;
+  }
+
+  .mobile-cart-active {
+    display: inline-block;
+  }
 }

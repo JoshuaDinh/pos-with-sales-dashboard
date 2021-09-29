@@ -4,8 +4,10 @@
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   margin-right: 20px;
 }
+
 .table {
   justify-content: center;
+  flex: 1;
 }
 
 th,
@@ -23,4 +25,10 @@ td {
 
 tbody {
   border-bottom: 1px solid rgb(245, 245, 245, 0.55);
+}
+
+@media (max-width: 1250px) {
+  .table-container {
+    margin: 0;
+  }
 }

@@ -17,7 +17,6 @@ import eleventhImage from "../../imgs/11.jpeg";
 
 const InventoryDisplay = ({ handleInvoiceDetails }) => {
   const [subscriptions, setSubscriptions] = useState([]);
-  console.log(subscriptions);
   useEffect(() => {
     const fetchData = async () => {
       try {

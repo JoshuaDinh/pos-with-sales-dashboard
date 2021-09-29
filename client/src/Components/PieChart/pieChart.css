@@ -6,6 +6,7 @@
   grid-area: pieChart;
   display: flex;
   flex-direction: column;
+  flex: 1;
   color: grey;
   font-size: 0.8rem;
   text-align: center;
@@ -13,4 +14,11 @@
 
 .pie-chart {
   flex: 1;
+}
+
+@media (max-width: 1250px) {
+  .pie-chart-container {
+    margin: 20px 0;
+    min-height: 50vh;
+  }
 }

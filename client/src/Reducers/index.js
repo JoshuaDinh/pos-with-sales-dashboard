@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import totalData from "./totalData";
-import dailyEmployeeData from "./dailyData";
+import totalSalesData from "./totalSalesData";
+import employeeSalesData from "./employeeSalesData";
+import subscriptionsData from "./subscriptionsData";
 
 export default combineReducers({
-  totalData,
-  dailyEmployeeData,
+  totalSalesData,
+  employeeSalesData,
+  subscriptionsData,
 });

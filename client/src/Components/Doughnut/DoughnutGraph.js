@@ -16,7 +16,7 @@ const options = {
   },
 };
 
-const DoughnutGraph = ({ employeeData }) => {
+const DoughnutGraph = ({ dataSet }) => {
   const data = (canvas) => {
     const ctx = canvas.getContext("2d");
     const gradient = ctx.createLinearGradient(0, 0, 240, 240);
@@ -27,11 +27,11 @@ const DoughnutGraph = ({ employeeData }) => {
 
     const label_names = [];
     const chart_data = [];
-    const get_label_names = employeeData.map((data) => {
+    const get_label_names = dataSet.map((data) => {
       label_names.push(data.employee_name);
     });
 
-    const get_chart_data = employeeData.map((data) => {
+    const get_chart_data = dataSet.map((data) => {
       chart_data.push(data["SUM(subscription_price)"]);
     });
 

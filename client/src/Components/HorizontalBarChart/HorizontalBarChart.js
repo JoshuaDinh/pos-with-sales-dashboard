@@ -2,13 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import "./horizontalBarChart.css";
-import { fetchDailyEmployeeData } from "../../Actions/dailyData";
-import { connect } from "react-redux";
 
 const options = {
   indexAxis: "y",
-  // Elements options apply to all of the options unless overridden in a dataset
-  // In this case, we are setting the border of each horizontal bar to be 2px wide
+
   elements: {
     bar: {
       borderWidth: 2,
@@ -28,7 +25,7 @@ const options = {
   },
 };
 
-const HorizontalBarChart = ({ employeeData }) => {
+const HorizontalBarChart = ({ dataSet }) => {
   const data = (canvas) => {
     const ctx = canvas.getContext("2d");
 
@@ -40,11 +37,11 @@ const HorizontalBarChart = ({ employeeData }) => {
 
     const label_names = [];
     const chart_data = [];
-    const get_label_names = employeeData.map((data) => {
+    const get_label_names = dataSet.map((data) => {
       label_names.push(data.employee_name);
     });
 
-    const get_chart_data = employeeData.map((data) => {
+    const get_chart_data = dataSet.map((data) => {
       chart_data.push(data["SUM(subscription_price)"]);
     });
 

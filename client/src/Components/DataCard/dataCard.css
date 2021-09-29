@@ -26,3 +26,8 @@
 .data-card:last-child {
   margin-right: 0;
 }
+
+.data-card > p {
+  font-size: 0.7rem;
+  color: grey;
+}

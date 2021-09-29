@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./table.css";
-import axios from "axios";
-
-const Table = () => {
-  const [table, setTable] = useState([]);
-  const [employeeData, setEmployeeData] = useState({});
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await axios.get("/api/sales");
-  //     setTable(response.data);
-  //   };
-  //   fetchData();
-  // }, []);
-
+import numeral from "numeral";
+const Table = ({ dataSet }) => {
   return (
     <div className="table-container">
       <table className="table">
@@ -23,32 +11,33 @@ const Table = () => {
               <span>Name</span>
             </th>
             <th>
-              <span>Daily Sales</span>
+              <span>Title</span>
             </th>
             <th>
               <span>Monthly Sales</span>
             </th>
             <th>
-              <span>Monthly Sales</span>
+              <span>Goals</span>
             </th>
-            <th>
+            {/* <th>
               <span>% Goal</span>
-            </th>
+            </th> */}
           </tr>
         </thead>
         {/*  */}
         <tbody>
-          {/* {tableData.map((t) => {
+          {dataSet.map((data) => {
             return (
               <tr>
-                <td>{t.employee_name}</td>
-                <td>${t.subscription_price}</td>
-                <td>$400,000</td>
-                <td>$10,000,000</td>
+                <td>{data.employee_name}</td>
+                <td>{data.employee_title}</td>
+                <td>
+                  {numeral(data["SUM(subscription_price)"]).format("$0,0")}
+                </td>
                 <td>40%</td>
               </tr>
             );
-          })} */}
+          })}
         </tbody>
       </table>
     </div>

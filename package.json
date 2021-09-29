@@ -1,0 +1,33 @@
+{
+  "name": "pos-with-sales-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaDinh/pos-with-sales-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaDinh/pos-with-sales-dashboard/issues"
+  },
+  "homepage": "https://github.com/JoshuaDinh/pos-with-sales-dashboard#readme",
+  "dependencies": {
+    "concurrently": "^6.2.1",
+    "expess": "0.0.1-security",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "numeral": "^2.0.6",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0"
+  }
+}

@@ -11,7 +11,7 @@ const App = () => {
         <Route path="/Dashboard">
           <Dashboard />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <CheckOut />
         </Route>
       </Switch>

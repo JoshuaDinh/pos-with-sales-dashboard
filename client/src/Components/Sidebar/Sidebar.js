@@ -9,15 +9,15 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <nav className="nav-container">
-        <NavLink
+        {/* <NavLink
           to="/home"
           className="sidebar-link"
           activeClassName="sidebar-active"
         >
           <HomeIcon className="navLink-icon" />
-        </NavLink>
+        </NavLink> */}
         <NavLink
-          to="/CheckOut"
+          to="/"
           className="sidebar-link"
           activeClassName="sidebar-active"
         >

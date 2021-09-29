@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard.css";
-import axios from "axios";
 import { connect } from "react-redux";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Table from "../../Components/Table/Table";
@@ -12,13 +11,27 @@ import StackedBarChart from "../../Components/StackedBarChart/StackedBarChart";
 import LineChart from "../../Components/LineChart/LineChart";
 import VerticalBar from "../../Components/VerticalBarChart/VeriticleBarChart";
 import PieChart from "../../Components/PieChart/PieChart";
-import { fetchDailyData, fetchMonthlyData } from "../../Actions/totalData";
+import {
+  fetchTotalDailyData,
+  fetchTotalMonthlyData,
+  fetchTotalYearlyData,
+} from "../../Actions/totalData";
+import { fetchDailyEmployeeData } from "../../Actions/dailyData";
 
-const Dashboard = ({ fetchDailyData, fetchMonthlyData }) => {
+const Dashboard = ({
+  fetchTotalDailyData,
+  fetchTotalMonthlyData,
+  fetchTotalYearlyData,
+  fetchDailyEmployeeData,
+  employeeData,
+}) => {
   useEffect(() => {
-    fetchDailyData();
-    fetchMonthlyData();
+    fetchTotalDailyData();
+    fetchTotalMonthlyData();
+    fetchTotalYearlyData();
+    fetchDailyEmployeeData();
   }, []);
+
   return (
     <div className="dashboard">
       <Sidebar />
@@ -27,8 +40,8 @@ const Dashboard = ({ fetchDailyData, fetchMonthlyData }) => {
         <div className="dashboard-team-data-container">
           <Table />
           <div className="dashboard-team-chart-container">
-            <DoughnutGraph />
-            <HorizontalBarChart />
+            <DoughnutGraph employeeData={employeeData} />
+            <HorizontalBarChart employeeData={employeeData} />
             <StackedBarChart />
           </div>
         </div>
@@ -48,8 +61,13 @@ const Dashboard = ({ fetchDailyData, fetchMonthlyData }) => {
 };
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    employeeData: state.dailyEmployeeData.data,
+  };
 };
-export default connect(mapStateToProps, { fetchDailyData, fetchMonthlyData })(
-  Dashboard
-);
+export default connect(mapStateToProps, {
+  fetchTotalDailyData,
+  fetchTotalMonthlyData,
+  fetchTotalYearlyData,
+  fetchDailyEmployeeData,
+})(Dashboard);

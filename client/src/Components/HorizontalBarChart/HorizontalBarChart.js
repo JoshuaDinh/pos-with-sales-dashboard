@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import "./horizontalBarChart.css";
-import { fetchDailyData } from "../../Actions/dailyData";
+import { fetchDailyEmployeeData } from "../../Actions/dailyData";
 import { connect } from "react-redux";
 
 const options = {
@@ -28,7 +28,7 @@ const options = {
   },
 };
 
-const HorizontalBarChart = ({ fetchDailyData, employeeData }) => {
+const HorizontalBarChart = ({ employeeData }) => {
   const data = (canvas) => {
     const ctx = canvas.getContext("2d");
 
@@ -48,7 +48,6 @@ const HorizontalBarChart = ({ fetchDailyData, employeeData }) => {
       chart_data.push(data["SUM(subscription_price)"]);
     });
 
-    console.log(label_names);
     return {
       labels: label_names,
       datasets: [
@@ -63,11 +62,6 @@ const HorizontalBarChart = ({ fetchDailyData, employeeData }) => {
     };
   };
 
-  useEffect(() => {
-    {
-      fetchDailyData();
-    }
-  }, []);
   return (
     <div className="horizontal-bar-chart">
       <Bar data={data} options={options} />
@@ -75,9 +69,4 @@ const HorizontalBarChart = ({ fetchDailyData, employeeData }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    employeeData: state.dailyEmployeeData.data,
-  };
-};
-export default connect(mapStateToProps, { fetchDailyData })(HorizontalBarChart);
+export default HorizontalBarChart;

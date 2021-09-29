@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./dashboard.css";
 import { connect } from "react-redux";
 import Sidebar from "../../Components/Sidebar/Sidebar";

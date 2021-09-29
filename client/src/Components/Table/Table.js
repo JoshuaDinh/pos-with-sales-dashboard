@@ -6,17 +6,14 @@ const Table = () => {
   const [table, setTable] = useState([]);
   const [employeeData, setEmployeeData] = useState({});
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get("/api/sales");
-      setTable(response.data);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await axios.get("/api/sales");
+  //     setTable(response.data);
+  //   };
+  //   fetchData();
+  // }, []);
 
-  table.map((t) => {
-    console.log(t);
-  });
   return (
     <div className="table-container">
       <table className="table">

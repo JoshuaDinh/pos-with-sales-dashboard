@@ -7,7 +7,7 @@ const mysql = require("mysql");
 //   SSL: "enabled with TLS_AES_256_GCM_SHA384",
 //   database: "ezoic",
 // });
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host: "us-cdbr-east-04.cleardb.com",
   user: "b9ce9353881a66",
   password: "5ba60be2",

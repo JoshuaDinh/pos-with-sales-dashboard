@@ -63,9 +63,8 @@ const Dashboard = ({
           <div className="dashboard-top-chart-container">
             <div className="dashboard-circle-charts">
               <DoughnutGraph dataSet={monthlySubscriptionsData} />{" "}
-              <PieChart dataSet={dailySubscriptionsData} />
             </div>
-            <HorizontalBarChart dataSet={dailyData} />
+            <HorizontalBarChart dataSet={monthlyData} />
           </div>
         </div>
         <div className="dashboard-total-chart-container">
@@ -84,7 +83,6 @@ const Dashboard = ({
 
 const mapStateToProps = (state) => {
   return {
-    dailyData: state.employeeSalesData.daily,
     monthlyData: state.employeeSalesData.monthly,
     yearlyDataByMonth: state.totalSalesData.yearlyDataByMonth,
     dailySubscriptionsData: state.subscriptionsData.daily,

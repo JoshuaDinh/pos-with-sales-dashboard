@@ -5,14 +5,8 @@ import numeral from "numeral";
 import { connect } from "react-redux";
 
 const StoreCardContainer = ({ dailyData, monthlyData, yearlyData }) => {
-  console.log(yearlyData);
-
   return (
     <div className="storeCardContainer">
-      <DataCard
-        title="Todays Sales"
-        amount={numeral(dailyData["SUM(subscription_price)"]).format("($0,0)")}
-      />
       <DataCard
         title="Monthly Sales Total"
         amount={numeral(monthlyData["SUM(subscription_price)"]).format(
@@ -29,7 +23,6 @@ const StoreCardContainer = ({ dailyData, monthlyData, yearlyData }) => {
 const mapStateToProps = (state) => {
   return {
     monthlyData: state.totalSalesData.monthlyData,
-    dailyData: state.totalSalesData.dailyData,
     yearlyData: state.totalSalesData.yearlyData,
   };
 };

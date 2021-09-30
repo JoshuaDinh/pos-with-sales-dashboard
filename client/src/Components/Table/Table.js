@@ -19,9 +19,9 @@ const Table = ({ dataSet }) => {
           </tr>
         </thead>
         <tbody>
-          {dataSet.map((data) => {
+          {dataSet.map((data, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{data.employee_name}</td>
                 <td>{data.employee_title}</td>
                 <td>

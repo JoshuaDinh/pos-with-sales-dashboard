@@ -1,4 +1,4 @@
-const mysql = require("mysql2");
+const mysql = require("mysql");
 
 // const connection = mysql.createConnection({
 //   host: "localhost",
@@ -8,10 +8,10 @@ const mysql = require("mysql2");
 //   database: "ezoic",
 // });
 const connection = mysql.createConnection({
-  host: "phtfaw4p6a970uc0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  user: "ut69293absdumgjg",
-  password: "ppt2kxv6brdt4en7",
-  database: "fvwaci7txkoyj1me",
+  host: "us-cdbr-east-04.cleardb.com",
+  user: "b9ce9353881a66",
+  password: "5ba60be2",
+  database: "heroku_7b28926ea541b90",
 });
 
 connection.connect((err) => {

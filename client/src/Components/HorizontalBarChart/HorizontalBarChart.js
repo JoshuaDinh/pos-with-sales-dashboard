@@ -19,7 +19,6 @@ const options = {
     },
     title: {
       display: true,
-      text: "Today's Sales Board",
     },
   },
 };
@@ -59,8 +58,11 @@ const HorizontalBarChart = ({ dataSet }) => {
   };
 
   return (
-    <div className="horizontal-bar-chart">
-      <Bar data={data} options={options} />
+    <div className="horizontal-container">
+      <h3>Monthly Sales Board</h3>
+      <div className="horizontal-bar-chart">
+        <Bar data={data} options={options} />
+      </div>
     </div>
   );
 };

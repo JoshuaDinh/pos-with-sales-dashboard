@@ -22,7 +22,7 @@ const MobileNav = () => {
       </div>
       {toggleMenu && (
         <div className="mobile-navigation-dropdown">
-          <div className="nav-menu">
+          <nav className="nav-menu">
             <Link
               to="/Dashboard"
               className="nav-link"
@@ -44,7 +44,7 @@ const MobileNav = () => {
             >
               Home
             </Link>
-          </div>
+          </nav>
         </div>
       )}
     </div>

@@ -91,10 +91,12 @@
   width: 100vw;
   align-items: center;
   text-decoration: none;
-  background: -webkit-linear-gradient(#ffc837, #ff8008);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: grey;
   font-size: 2rem;
+}
+.nav-link:hover {
+  border-top: 1px solid #ffc837;
+  border-bottom: 1px solid #ffc837;
 }
 
 @media (max-width: 1220px) {

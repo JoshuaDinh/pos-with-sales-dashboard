@@ -13,7 +13,6 @@ const CheckOut = () => {
     setInvoiceDetails(data);
     setMobileCart(!mobileCart);
   };
-  console.log(mobileCart);
   const clearInvoiceDetails = () => {
     setInvoiceDetails({
       subscription: "",

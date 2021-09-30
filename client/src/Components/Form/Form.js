@@ -17,7 +17,6 @@ const Form = ({ updateFormData, formData }) => {
     fetchData();
   }, []);
 
-  console.log(employees);
   return (
     <form className="form">
       <div className="form-info">

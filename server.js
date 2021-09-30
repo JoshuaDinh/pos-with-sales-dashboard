@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const subscriptionRoutes = require("./routes/api/subscriptions");
 const employeeRoutes = require("./routes/api/employees");
 const invoiceRoutes = require("./routes/api/invoices");
@@ -11,7 +12,11 @@ const PORT = process.env.PORT || "5000";
 
 // Middleware - method to recognize the incoming Request Object as a JSON Object.
 app.use(express.json({ extended: false }));
-
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 // Static assets - production
 // Static assets - production
 if (process.env.NODE_ENV === "production") {

@@ -8,9 +8,7 @@ import axios from "axios";
 
 export const fetchTotalMonthlyData = () => async (dispatch) => {
   try {
-    const response = await axios.get(
-      "https://pos-sales-dashboard.herokuapp.com/api/sales/monthly-total"
-    );
+    const response = await axios.get("/api/sales/monthly-total");
     dispatch({ type: TOTAL_MONTHLY, payload: response.data[0] });
   } catch (err) {
     console.error(err);
@@ -19,9 +17,7 @@ export const fetchTotalMonthlyData = () => async (dispatch) => {
 
 export const fetchTotalDailyData = () => async (dispatch) => {
   try {
-    const response = await axios.get(
-      "https://pos-sales-dashboard.herokuapp.com/api/sales/daily-total"
-    );
+    const response = await axios.get("/api/sales/daily-total");
     dispatch({ type: TOTAL_DAILY, payload: response.data[0] });
   } catch (err) {
     console.error(err);

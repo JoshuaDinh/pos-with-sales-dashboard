@@ -50,16 +50,7 @@ const Dashboard = ({
     fetchMonthlyEmployeeData();
     fetchDailySubscriptionsData();
     fetchMonthlySubscriptionsData();
-  }, [
-    fetchDailyEmployeeData,
-    fetchDailySubscriptionsData,
-    fetchMonthlyEmployeeData,
-    fetchMonthlySubscriptionsData,
-    fetchTotalDailyData,
-    fetchTotalMonthlyData,
-    fetchTotalYearlyData,
-    fetchTotalYearlyDataByMonth,
-  ]);
+  }, []);
 
   return (
     <div className="dashboard">

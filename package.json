@@ -26,6 +26,7 @@
   "homepage": "https://github.com/JoshuaDinh/pos-with-sales-dashboard#readme",
   "dependencies": {
     "concurrently": "^6.2.1",
+    "cors": "^2.8.5",
     "expess": "0.0.1-security",
     "express": "^4.17.1",
     "mysql": "^2.18.1",

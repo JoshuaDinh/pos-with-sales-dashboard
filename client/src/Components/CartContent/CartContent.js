@@ -1,7 +1,7 @@
 import React from "react";
 import "./cartContent.css";
 
-export const CartContent = ({ data, clearInvoiceDetails, img }) => {
+export const CartContent = ({ data }) => {
   return (
     <div className="cart-item">
       <img src={data?.img} className="cart-img" alt="#" />

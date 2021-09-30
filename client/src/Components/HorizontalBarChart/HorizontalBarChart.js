@@ -59,7 +59,7 @@ const HorizontalBarChart = ({ dataSet }) => {
 
   return (
     <div className="horizontal-container">
-      <h3>Monthly Sales Board</h3>
+      <h3>Todays Sales Board</h3>
       <div className="horizontal-bar-chart">
         <Bar data={data} options={options} />
       </div>

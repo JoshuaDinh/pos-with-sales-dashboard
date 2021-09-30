@@ -6,7 +6,7 @@ const connection = require("../../db/dbConfig");
 // Retrieves total sum of all sales per employee daily
 router.get("/employee/daily-totals", (req, res) => {
   const sql =
-    "SELECT Invoices.employee_id, employees.employee_id, employee_name, SUM(subscription_price) FROM Invoices JOIN employees ON Invoices.employee_id = employees.employee_id WHERE date(new_date) = current_date GROUP BY employee_name";
+    "SELECT Invoices.employee_id, employees.employee_id, employee_name, SUM(subscription_price) FROM Invoices JOIN employees ON Invoices.employee_id = employees.employee_id WHERE date(new_date) = date(current_date) GROUP BY employee_name";
   connection.query(sql, (err, result) => {
     if (err) {
       console.log(err);
@@ -20,7 +20,7 @@ router.get("/employee/daily-totals", (req, res) => {
 // Retrieves total sum of all sales daily
 router.get("/daily-total", (req, res) => {
   const sql =
-    "SELECT SUM(subscription_price) FROM Invoices WHERE date(new_date) = current_date";
+    "SELECT SUM(subscription_price) FROM Invoices WHERE date(new_date) = date(current_date)";
 
   connection.query(sql, (err, result) => {
     if (err) {

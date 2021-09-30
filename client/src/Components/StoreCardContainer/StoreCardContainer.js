@@ -8,6 +8,10 @@ const StoreCardContainer = ({ dailyData, monthlyData, yearlyData }) => {
   return (
     <div className="storeCardContainer">
       <DataCard
+        title="Todays Sales Total"
+        amount={numeral(dailyData["SUM(subscription_price)"]).format("($0,0)")}
+      />
+      <DataCard
         title="Monthly Sales Total"
         amount={numeral(monthlyData["SUM(subscription_price)"]).format(
           "($0,0)"
@@ -22,6 +26,7 @@ const StoreCardContainer = ({ dailyData, monthlyData, yearlyData }) => {
 };
 const mapStateToProps = (state) => {
   return {
+    dailyData: state.totalSalesData.dailyData,
     monthlyData: state.totalSalesData.monthlyData,
     yearlyData: state.totalSalesData.yearlyData,
   };

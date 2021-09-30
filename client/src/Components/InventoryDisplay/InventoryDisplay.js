@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./inventoryDisplay.css";
 import axios from "axios";
-
 import ImgMediaCard from "../ImgMediaCard/ImgMediaCard";
 import firstImage from "../../imgs/1.jpeg";
 import secondImage from "../../imgs/2.png";
